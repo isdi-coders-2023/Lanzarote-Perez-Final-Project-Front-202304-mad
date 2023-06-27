@@ -20,7 +20,7 @@ export default function Login() {
       password: (elements.namedItem("password") as HTMLFormElement).value,
     };
 
-    const urlLogin = url + "/login";
+    const urlLogin = url + "user/login";
     const response = await fetch(urlLogin, {
       method: "PATCH",
       headers: {

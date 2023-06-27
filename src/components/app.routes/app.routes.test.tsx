@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router";
 import { AppContext } from "../../../context/app.context";
 import "@testing-library/jest-dom";
-import { ContextStructure } from "../../../context/app.context";
+import { ContextStructure } from "../../../context/app.context.js";
 
 const mockContext: ContextStructure = {
   characterContext: {
