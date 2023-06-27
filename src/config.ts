@@ -1,2 +1,2 @@
-export const url = "http://localhost:4400/user";
+export const url = "http://localhost:4400/";
 export const storeName = "store";

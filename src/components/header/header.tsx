@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { storeName } from "../../config";
 import { RootState } from "../../redux/store";
 
-import "./Header.css";
+import "./Header.scss";
 import { logout } from "../../redux/user.Slice";
 
 export function Header({ children }: { children: JSX.Element }) {

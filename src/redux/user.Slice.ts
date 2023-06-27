@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { url } from "../config";
 
 type UserStates = "idle" | "logging" | "logged";
 

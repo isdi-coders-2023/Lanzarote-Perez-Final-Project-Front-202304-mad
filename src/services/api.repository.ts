@@ -35,12 +35,7 @@ export class ApiRepository<T extends { id: string | number }> {
       },
       body: JSON.stringify(data),
     });
-    // if (response.status !== 200) {
-    //   return (<p>"Usuario y/o contraseña incorrectas"</p>)
-    // } else {
-    //   return
-    //     <Navigate replace to="/Home" />;
-    // }
+
     const result = await response.json();
     console.log(result);
   }
