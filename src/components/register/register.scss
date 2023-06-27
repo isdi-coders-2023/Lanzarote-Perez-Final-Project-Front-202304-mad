@@ -1,0 +1,48 @@
+.register-form {
+  height: 60%;
+  width: 30rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title_form {
+    color: white;
+    background-color: none;
+  }
+}
+
+.loaded-route {
+  display: flex;
+  min-height: 90vh;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+}
+
+input {
+  background-color: rgb(236, 233, 233);
+  width: 12rem;
+  height: 2rem;
+  border-radius: 1px 1rem 1px 1rem;
+  margin: 1rem;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+input:hover {
+  background-color: rgba(225, 0, 255, 0.658);
+}
+
+input::placeholder {
+  padding-left: 20px;
+  color: rgb(14, 32, 2);
+}
+
+.subtitle {
+  color: aliceblue;
+}
+
+a {
+  color: rgba(0, 255, 229, 1) 100%;
+}
