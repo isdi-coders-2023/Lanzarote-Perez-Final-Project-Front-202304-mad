@@ -9,13 +9,11 @@ export default function CarForm() {
 
   const handleNewCar = async (event: SyntheticEvent) => {
     const formRegisterElement: HTMLFormElement =
-      document.querySelector(".car-form")!;
+      event.target as HTMLFormElement;
 
     event.preventDefault();
 
     const data = new FormData(formRegisterElement);
-
-    console.log(formRegisterElement);
 
     const urlRegister = url + "car/create";
     const response = await fetch(urlRegister, {
@@ -28,10 +26,6 @@ export default function CarForm() {
       body: data,
     });
     const state = await response.json();
-
-    console.log(
-      `Bearer ${localStorage.getItem("store")!.slice(10).split('"')[0]}`
-    );
     console.log(state);
 
     if (state.error) {
@@ -52,12 +46,7 @@ export default function CarForm() {
   };
 
   return (
-    <form
-      className="car-form"
-      id="form"
-      encType="multipart/form-data"
-      onSubmit={handleNewCar}
-    >
+    <form className="car-form" id="form" onSubmit={handleNewCar}>
       <h2 className="title_form">REGISTER</h2>
       <input type="text" placeholder="Brand" name="carBrand"></input>
       <input type="text" placeholder="Model" name="carModel"></input>

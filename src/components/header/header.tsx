@@ -14,7 +14,6 @@ export function Header({ children }: { children: JSX.Element }) {
   const imageUrl = "http://localhost:4400/";
 
   const { token, userData } = useSelector((state: RootState) => state.user);
-  console.log(imageUrl + userData?.avatar.urlOriginal);
 
   const handleUser = () => {
     if (token) {
