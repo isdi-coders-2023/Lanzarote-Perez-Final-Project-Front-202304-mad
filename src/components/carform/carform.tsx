@@ -15,27 +15,49 @@ export default function CarForm() {
 
     const data = new FormData(formRegisterElement);
 
-    const urlRegister = url + "car/register";
+    console.log(formRegisterElement);
+
+    const urlRegister = url + "car/create";
     const response = await fetch(urlRegister, {
       method: "POST",
-      headers: {},
+      headers: {
+        Authorization: `Bearer ${
+          localStorage.getItem("store")!.slice(10).split('"')[0]
+        }`,
+      },
       body: data,
     });
     const state = await response.json();
 
+    console.log(
+      `Bearer ${localStorage.getItem("store")!.slice(10).split('"')[0]}`
+    );
     console.log(state);
+
+    if (state.error) {
+      Swal.fire({
+        icon: "error",
+        text: `${state.error}`,
+      });
+    } else {
+      Swal.fire({
+        icon: "success",
+        text: "Succesfully Registered!",
+      });
+    }
 
     state.carData = state.car;
     delete state.car;
-    Swal.fire({
-      icon: "success",
-      text: "Succesfully Registered!",
-    });
     navigate("/garage");
   };
 
   return (
-    <form className="car-form" id="form">
+    <form
+      className="car-form"
+      id="form"
+      encType="multipart/form-data"
+      onSubmit={handleNewCar}
+    >
       <h2 className="title_form">REGISTER</h2>
       <input type="text" placeholder="Brand" name="carBrand"></input>
       <input type="text" placeholder="Model" name="carModel"></input>

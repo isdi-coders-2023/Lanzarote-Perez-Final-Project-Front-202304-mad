@@ -14,6 +14,7 @@ export function Header({ children }: { children: JSX.Element }) {
   const imageUrl = "http://localhost:4400/";
 
   const { token, userData } = useSelector((state: RootState) => state.user);
+  console.log(imageUrl + userData?.avatar.urlOriginal);
 
   const handleUser = () => {
     if (token) {
@@ -33,6 +34,7 @@ export function Header({ children }: { children: JSX.Element }) {
     Swal.fire({ icon: "success", text: "Succesfully logged out!" });
     dispatch(logout());
     localStorage.removeItem(storeName);
+    navigate("/");
   };
 
   return (
