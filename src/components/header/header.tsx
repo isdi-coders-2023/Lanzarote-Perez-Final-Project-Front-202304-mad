@@ -4,11 +4,14 @@ import { storeName } from "../../config";
 import { RootState } from "../../redux/store";
 
 import "./Header.scss";
-import { logout } from "../../redux/user.Slice";
+import userSlice, { logout } from "../../redux/user.Slice";
+import Swal from "sweetalert2";
 
 export function Header({ children }: { children: JSX.Element }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const imageUrl = "http://localhost:4400/";
 
   const { token, userData } = useSelector((state: RootState) => state.user);
 
@@ -27,7 +30,7 @@ export function Header({ children }: { children: JSX.Element }) {
   };
 
   const runLogout = () => {
-    console.log("Logout");
+    Swal.fire({ icon: "success", text: "Succesfully logged out!" });
     dispatch(logout());
     localStorage.removeItem(storeName);
   };
@@ -42,23 +45,28 @@ export function Header({ children }: { children: JSX.Element }) {
           {token ? (
             <>
               <div className="user_info">
-                <span className="user_name">
-                  Bienvenido, {userData?.userName}
-                </span>
-                <button onClick={handleUser}>Logout</button>
+                <span className="user_name">{userData?.userName}</span>
+                <button onClick={handleUser} className="logout_button">
+                  Logout
+                </button>
               </div>
-              <figure>
+              <figure className="image_container">
                 <img
-                  src="https://as1.ftcdn.net/v2/jpg/03/53/11/00/1000_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg"
+                  src={imageUrl + userData?.avatar.urlOriginal}
                   height={"50px"}
+                  width={"50px"}
                 ></img>
               </figure>
             </>
           ) : (
             <>
-              <div className="user_info">
-                <button onClick={handleRegister}>Register</button>
-                <button onClick={handleUser}>Login</button>
+              <div className="user_info user_buttons">
+                <button onClick={handleRegister} className="register_button">
+                  Register
+                </button>
+                <button onClick={handleUser} className="login_button">
+                  Login
+                </button>
               </div>
             </>
           )}

@@ -1,7 +1,8 @@
 .title {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  height: 3rem;
+  height: 4rem;
   font-size: 1rem;
   background-color: rgb(95, 90, 90);
   color: white;
@@ -14,10 +15,18 @@ h1 {
   margin: 0;
 }
 
+.image_container {
+  margin: 1rem;
+
+  img {
+    border-radius: 50%;
+    border: 2px solid rgb(255, 0, 0);
+  }
+}
+
 .title_info {
   margin-left: 1rem;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -30,12 +39,20 @@ h1 {
 }
 
 .user_info {
+  display: flex;
   height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user_buttons {
+  display: flex;
+  flex-direction: row;
 }
 
 .user_name {
   display: flex;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   align-items: center;
 }
 
@@ -48,6 +65,34 @@ ul {
 
 a {
   margin: 1rem;
+}
+
+.logout_button {
+  border: 2px solid red;
+  color: grey;
+  background: rgb(255, 255, 255);
+  width: 4rem;
+  height: 1.5rem;
+  border-radius: 0.8rem;
+}
+
+.login_button {
+  border: 2px solid rgb(0, 255, 51);
+  color: grey;
+  background: rgb(255, 255, 255);
+  width: 4rem;
+  height: 1.5rem;
+  border-radius: 0.8rem;
+  margin: 0.5rem;
+}
+
+.register_button {
+  border: 2px solid rgb(255, 170, 0);
+  color: grey;
+  background: rgb(255, 255, 255);
+  width: 4rem;
+  height: 1.5rem;
+  border-radius: 0.8rem;
 }
 
 button:hover {

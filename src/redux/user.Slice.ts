@@ -2,11 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 type UserStates = "idle" | "logging" | "logged";
 
+export type Avatar = {
+  urlOriginal: string;
+  url: string;
+  mimetype: string;
+  size: number;
+};
+
 export type UserLogged = {
   id: string;
   userName: string;
   email: string;
-  avatar: string;
+  avatar: Avatar;
 };
 
 type State = {

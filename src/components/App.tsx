@@ -14,7 +14,6 @@ export function App() {
   const initialLoginCheck = () => {
     const lsString = localStorage.getItem("store");
 
-    console.log(lsString);
     if (!lsString) return console.log("No hay datos en el local storage");
     const { token } = JSON.parse(lsString);
     const userData: UserLogged = jwtDecode(token);
