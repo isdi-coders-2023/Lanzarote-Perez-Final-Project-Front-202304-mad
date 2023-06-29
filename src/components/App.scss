@@ -23,7 +23,12 @@ html {
 }
 
 .loaded-route {
-  max-height: 60%;
+  flex-direction: column;
+  display: flex;
+  min-height: 85vh;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
 }
 
 button {

@@ -31,6 +31,7 @@ export default function Login() {
     const state = await response.json();
 
     console.log(state);
+    if (state.error) return Swal.fire({ icon: "error", text: state.error });
 
     state.userData = state.user;
     delete state.user;
