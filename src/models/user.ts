@@ -1,15 +1,18 @@
+import { Avatar } from "../redux/user.Slice";
+
 export type User = {
-  id: String;
-  userName: String;
-  email: String;
-  password: String;
-  avatar: String;
+  id: string;
+  userName: string;
+  email: string;
+  password: string;
+  avatar: Avatar;
   cars: Car[];
 };
 
 export type Car = {
-  carPhoto: String;
+  carPhoto: string;
+  carBrand: string;
+  carModel: string;
+  carYear: string;
   carHP: string;
-  carFuel: string;
-  carType: string;
 };

@@ -22,14 +22,22 @@ export default function Register() {
     });
     const state = await response.json();
 
+    if (state.error) {
+      Swal.fire({
+        icon: "error",
+        text: `${state.error}`,
+      });
+    } else {
+      Swal.fire({
+        icon: "success",
+        text: "Succesfully Registered!",
+      });
+    }
+
     console.log(state);
 
     state.userData = state.user;
     delete state.user;
-    Swal.fire({
-      icon: "success",
-      text: "Succesfully Registered!",
-    });
     navigate("/login");
   };
 
