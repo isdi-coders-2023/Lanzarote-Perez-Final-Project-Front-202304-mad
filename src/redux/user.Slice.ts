@@ -58,6 +58,11 @@ const usersSlice = createSlice({
       ...state,
       token: undefined,
     }),
+    loginWithToken: (state, { payload }: PayloadAction<State>) => ({
+      ...state,
+      token: payload.token,
+      userData: payload.userData,
+    }),
   },
   extraReducers: (builder) => {
     builder.addCase(loadUsersAsync.fulfilled, (state, { payload }) => ({

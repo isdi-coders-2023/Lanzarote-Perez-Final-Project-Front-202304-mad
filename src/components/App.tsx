@@ -6,20 +6,27 @@ import { Header } from "./header/header";
 import { Menu } from "./menu/menu";
 import jwtDecode from "jwt-decode";
 import { useUsers } from "../hooks/use.user";
+import { User } from "../models/user";
+import { useEffect } from "react";
 
 export function App() {
-  // const { handleLoginUser } = useUsers();
+  const { handleLoginWithToken } = useUsers();
 
-  // const initialLoginCheck = () => {
-  //   const lsString = localStorage.getItem("store");
+  const initialLoginCheck = () => {
+    const lsString = localStorage.getItem("store");
+    if (!lsString) return console.log("No hay datos en el local storage");
 
-  //   if (!lsString) return console.log("No hay datos en el local storage");
-  //   const { token } = JSON.parse(lsString);
-  //   const userData: UserLogged = jwtDecode(token);
-  //   userData.email = "";
-  //   console.log(userData);
-  //   handleLoginUser(userData);
-  // };
+    console.log(lsString);
+    const token = lsString;
+
+    const userData: Partial<User> = jwtDecode(token);
+    console.log({ userData });
+    handleLoginWithToken(userData, token);
+  };
+
+  useEffect(() => {
+    initialLoginCheck();
+  }, []);
 
   const menuOptions: MenuOptions = [
     { url: "/", label: "Home", protected: false },

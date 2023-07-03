@@ -3,17 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { storeName } from "../../config";
 
 import "./Header.scss";
-import { UsersState } from "../../redux/user.Slice";
 import Swal from "sweetalert2";
-import { useUsers } from "../../hooks/use.user";
+import { RootState } from "../../redux/store";
 
 export function Header({ children }: { children: JSX.Element }) {
   const navigate = useNavigate();
 
   const imageUrl = "http://localhost:4400/";
 
-  const { handleLogoutUser } = useUsers();
-  const { token, currentUser } = useSelector((state: UsersState) => state);
+  const { token, userData } = useSelector((state: RootState) => state.users);
 
   const handleUser = () => {
     if (token) {
@@ -30,7 +28,7 @@ export function Header({ children }: { children: JSX.Element }) {
 
   const runLogout = () => {
     Swal.fire({ icon: "success", text: "Succesfully logged out!" });
-    //handleLogoutUser(currentUser);
+    //
     localStorage.removeItem(storeName);
     navigate("/");
   };
@@ -45,14 +43,14 @@ export function Header({ children }: { children: JSX.Element }) {
           {token ? (
             <>
               <div className="user_info">
-                <span className="user_name">{currentUser?.userName}</span>
+                <span className="user_name">{userData?.userName}</span>
                 <button onClick={handleUser} className="logout_button">
                   Logout
                 </button>
               </div>
               <figure className="image_container">
                 <img
-                  src={imageUrl + currentUser.avatar?.urlOriginal}
+                  src={imageUrl + userData.avatar?.urlOriginal}
                   height={"50px"}
                   width={"50px"}
                 ></img>
