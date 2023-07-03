@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { AppDispatch, store } from "../redux/store";
+import { AppDispatch } from "../redux/store";
 import { useMemo } from "react";
 
 import {
@@ -29,6 +29,13 @@ export function useUsers() {
     dispatch(loginUserAsync({ repo, data }));
   };
 
+  const handleLoginWithToken = async (
+    userData: Partial<User>,
+    token: string
+  ) => {
+    dispatch(ac.loginWithToken({ token, userData }));
+  };
+
   const handleGetToken = (token: string) => {
     dispatch(ac.getToken(token));
   };
@@ -41,6 +48,7 @@ export function useUsers() {
   return {
     handleRegisterUser,
     handleLoginUser,
+    handleLoginWithToken,
     token: token,
     handleGetToken,
     handleLogoutUser,
