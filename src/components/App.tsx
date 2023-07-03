@@ -31,6 +31,7 @@ export function App() {
   const menuOptions: MenuOptions = [
     { url: "/", label: "Home", protected: false },
     { url: "/garage", label: "Garage", protected: true },
+    { url: "/profile", label: "Profile", protected: true },
   ];
 
   // initialLoginCheck();

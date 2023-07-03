@@ -20,7 +20,8 @@ export default function CarForm() {
       method: "POST",
       headers: {
         Authorization: `Bearer ${
-          localStorage.getItem("store")!.slice(10).split('"')[0]
+          localStorage.getItem("store")
+          //!.slice(10).split('"')[0]
         }`,
       },
       body: data,

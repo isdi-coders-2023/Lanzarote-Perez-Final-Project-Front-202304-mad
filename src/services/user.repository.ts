@@ -12,7 +12,7 @@ export class UserRepository extends ApiRepository<User> {
   }
 
   async query(): Promise<User[]> {
-    const response = await fetch(this.url);
+    const response = await fetch(this.url + "user");
     if (!response.ok) {
       const message = `Error: ${response.status}. ${response.statusText}`;
       throw new Error(message);
@@ -39,7 +39,6 @@ export class UserRepository extends ApiRepository<User> {
       headers: { "Content-Type": "application/json" },
     });
     const result = response.json();
-    console.log(result, "USER REPO");
     return result;
   }
 }

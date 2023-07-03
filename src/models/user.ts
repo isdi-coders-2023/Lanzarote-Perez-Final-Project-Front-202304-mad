@@ -10,9 +10,16 @@ export type User = {
 };
 
 export type Car = {
-  carPhoto: string;
+  carPhoto: CarPhoto;
   carBrand: string;
   carModel: string;
   carYear: string;
   carHP: string;
+};
+
+export type CarPhoto = {
+  urlOriginal: string;
+  url: string;
+  mimetype: string;
+  size: number;
 };

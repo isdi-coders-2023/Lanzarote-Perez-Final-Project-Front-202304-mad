@@ -1,0 +1,10 @@
+.profile_container {
+  min-height: 100%;
+  background-color: aqua;
+}
+
+.profile_card {
+  display: flex;
+  min-height: 50%;
+  flex-direction: column;
+}
