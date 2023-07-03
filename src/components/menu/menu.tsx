@@ -8,7 +8,7 @@ type PropsType = {
 };
 
 export function Menu({ options }: PropsType) {
-  const { token } = useSelector((state: RootState) => state.user);
+  const { token } = useSelector((state: RootState) => state.users);
 
   return (
     <nav>

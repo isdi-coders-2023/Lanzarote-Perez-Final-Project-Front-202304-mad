@@ -1,19 +1,19 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { storeName } from "../../config";
-import { RootState } from "../../redux/store";
 
 import "./Header.scss";
-import userSlice, { logout } from "../../redux/user.Slice";
+import { UsersState } from "../../redux/user.Slice";
 import Swal from "sweetalert2";
+import { useUsers } from "../../hooks/use.user";
 
 export function Header({ children }: { children: JSX.Element }) {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const imageUrl = "http://localhost:4400/";
 
-  const { token, userData } = useSelector((state: RootState) => state.user);
+  const { handleLogoutUser } = useUsers();
+  const { token, currentUser } = useSelector((state: UsersState) => state);
 
   const handleUser = () => {
     if (token) {
@@ -25,13 +25,12 @@ export function Header({ children }: { children: JSX.Element }) {
   };
 
   const handleRegister = () => {
-    console.log("Register");
     navigate("register");
   };
 
   const runLogout = () => {
     Swal.fire({ icon: "success", text: "Succesfully logged out!" });
-    dispatch(logout());
+    //handleLogoutUser(currentUser);
     localStorage.removeItem(storeName);
     navigate("/");
   };
@@ -46,14 +45,14 @@ export function Header({ children }: { children: JSX.Element }) {
           {token ? (
             <>
               <div className="user_info">
-                <span className="user_name">{userData?.userName}</span>
+                <span className="user_name">{currentUser?.userName}</span>
                 <button onClick={handleUser} className="logout_button">
                   Logout
                 </button>
               </div>
               <figure className="image_container">
                 <img
-                  src={imageUrl + userData?.avatar.urlOriginal}
+                  src={imageUrl + currentUser.avatar?.urlOriginal}
                   height={"50px"}
                   width={"50px"}
                 ></img>

@@ -1,14 +1,14 @@
 import { SyntheticEvent } from "react";
 import "./login.scss";
-import { login } from "../../redux/user.Slice";
-import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { storeName, url } from "../../config";
 import Swal from "sweetalert2";
+import { useUsers } from "../../hooks/use.user";
 
 export default function Login() {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { handleLoginUser } = useUsers();
 
   const handleLogin = async (event: SyntheticEvent) => {
     event.preventDefault();
@@ -19,24 +19,9 @@ export default function Login() {
       user: (elements.namedItem("user") as HTMLFormElement).value,
       password: (elements.namedItem("password") as HTMLFormElement).value,
     };
+    console.log(data);
+    await handleLoginUser(data);
 
-    const urlLogin = url + "user/login";
-    const response = await fetch(urlLogin, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    const state = await response.json();
-
-    console.log(state);
-    if (state.error) return Swal.fire({ icon: "error", text: state.error });
-
-    state.userData = state.user;
-    delete state.user;
-    dispatch(login(state));
-    localStorage.setItem(storeName, JSON.stringify({ token: state.token }));
     Swal.fire({
       icon: "success",
       text: "Succesfully logged in!",

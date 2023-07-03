@@ -47,7 +47,7 @@ export default function CarForm() {
 
   return (
     <form className="car-form" id="form" onSubmit={handleNewCar}>
-      <h2 className="title_form">REGISTER</h2>
+      <h2 className="title_form">REGISTER NEW CAR</h2>
       <input type="text" placeholder="Brand" name="carBrand"></input>
       <input type="text" placeholder="Model" name="carModel"></input>
       <input type="text" placeholder="Year" name="carYear"></input>
