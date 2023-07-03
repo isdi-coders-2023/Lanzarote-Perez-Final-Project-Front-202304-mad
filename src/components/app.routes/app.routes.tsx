@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+import { Profile } from "../profile/profile";
 
 const Home = lazy(() => import("../home/home"));
 const Login = lazy(() => import("../login/login"));
@@ -14,6 +15,7 @@ export function AppRoutes() {
         <Route path={"/login"} element={<Login></Login>}></Route>
         <Route path={"/register"} element={<Register></Register>}></Route>
         <Route path={"/garage"} element={<Garage></Garage>}></Route>
+        <Route path={"/profile"} element={<Profile></Profile>}></Route>
         <Route path={"/*"} element={<ErrorPage></ErrorPage>}></Route>
       </Routes>
     </Suspense>

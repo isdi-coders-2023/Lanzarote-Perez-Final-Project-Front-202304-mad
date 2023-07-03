@@ -10,17 +10,19 @@ export type Avatar = {
 };
 
 export type State = {
+  userList: User[];
   userData: Partial<User>;
   token?: string;
 };
 
 const initialState: State = {
+  userList: [],
   token: "",
   userData: {} as Partial<User>,
 };
 
 export const loadUsersAsync = createAsyncThunk(
-  "user/load",
+  "users/load",
   async (repo: UserRepository) => {
     const response = await repo.query();
     return response;
@@ -35,7 +37,7 @@ export const registerUserAsync = createAsyncThunk<
 });
 
 export const loginUserAsync = createAsyncThunk<
-  State,
+  Partial<State>,
   { repo: UserRepository; data: Partial<User> }
 >("users/login", async ({ repo, data }) => {
   const result = await repo.login(data);
@@ -58,7 +60,10 @@ const usersSlice = createSlice({
       ...state,
       token: undefined,
     }),
-    loginWithToken: (state, { payload }: PayloadAction<State>) => ({
+    loginWithToken: (
+      state: Partial<State>,
+      { payload }: PayloadAction<Partial<State>>
+    ) => ({
       ...state,
       token: payload.token,
       userData: payload.userData,
@@ -67,7 +72,7 @@ const usersSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(loadUsersAsync.fulfilled, (state, { payload }) => ({
       ...state,
-      users: payload,
+      userList: payload,
     }));
     builder.addCase(registerUserAsync.fulfilled, (state, { payload }) => ({
       ...state,
@@ -77,11 +82,11 @@ const usersSlice = createSlice({
       ...state,
       token: payload.token,
       userData: {
-        id: payload.userData.id,
-        userName: payload.userData.userName,
-        email: payload.userData.email,
-        avatar: payload.userData.avatar,
-        cars: payload.userData.cars,
+        id: payload.userData?.id,
+        userName: payload.userData?.userName,
+        email: payload.userData?.email,
+        avatar: payload.userData?.avatar,
+        cars: payload.userData?.cars,
       },
     }));
   },

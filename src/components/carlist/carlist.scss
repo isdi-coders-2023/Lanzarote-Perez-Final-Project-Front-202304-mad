@@ -1,0 +1,25 @@
+.car_card {
+  background-color: beige;
+  margin: 1rem;
+  border: 2px solid red;
+  display: flex;
+}
+
+.car_card_image {
+  margin: 0;
+  margin-right: 0.75rem;
+}
+
+img {
+  object-fit: cover;
+}
+
+.car_card_info {
+  font-size: smaller;
+  color: black;
+  display: flex;
+  margin: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}

@@ -1,10 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store";
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 
 import {
   State,
   ac,
+  loadUsersAsync,
   loginUserAsync,
   registerUserAsync,
 } from "../redux/user.Slice";
@@ -17,9 +18,9 @@ export function useUsers() {
   const url = "http://localhost:4400/";
   const repo: UserRepository = useMemo(() => new UserRepository(url), []);
 
-  // const handleLoadUsers = useCallback(async () => {
-  //   dispatch(loadUsersAsync(repo));
-  // }, [repo, dispatch]);
+  const handleLoadUsers = useCallback(async () => {
+    dispatch(loadUsersAsync(repo));
+  }, [repo, dispatch]);
 
   const handleRegisterUser = async (data: Partial<User>) => {
     dispatch(registerUserAsync({ repo, data }));
@@ -46,6 +47,7 @@ export function useUsers() {
   };
 
   return {
+    handleLoadUsers,
     handleRegisterUser,
     handleLoginUser,
     handleLoginWithToken,
