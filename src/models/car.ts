@@ -10,6 +10,7 @@ export type Car = {
 export type CarPhoto = {
   urlOriginal: string;
   url: string;
+  imageUrl: string;
   mimetype: string;
   size: number;
 };

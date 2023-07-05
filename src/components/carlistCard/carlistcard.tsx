@@ -6,12 +6,11 @@ type PropsType = {
   item: Car;
 };
 export function CarlistCard({ item }: PropsType) {
-  const imageUrl = "http://localhost:4400/";
   return (
     <div className="car_card" key={item.carModel}>
       <figure className="car_card_image">
         <img
-          src={imageUrl + item.carPhoto.urlOriginal}
+          src={item.carPhoto.imageUrl}
           width={200}
           height={146.3}
           className="image"
@@ -27,6 +26,7 @@ export function CarlistCard({ item }: PropsType) {
               className="edit_button"
             />
           </Link>
+          <button>DELETE</button>
         </div>
         <div className="car_card_info">
           <span>{item.carBrand + " " + item.carModel}</span>

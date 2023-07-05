@@ -5,6 +5,7 @@ import { UserRepository } from "../services/user.repository";
 export type Avatar = {
   urlOriginal: string;
   url: string;
+  imageUrl: string;
   mimetype: string;
   size: number;
 };

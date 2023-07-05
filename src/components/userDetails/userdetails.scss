@@ -5,6 +5,12 @@
   height: fit-content;
 }
 
+.car_card {
+  display: flex;
+  background-color: grey;
+  border: 2px solid black;
+}
+
 .user_details_image {
   width: 18rem;
 }
