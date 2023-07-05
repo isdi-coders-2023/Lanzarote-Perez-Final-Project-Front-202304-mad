@@ -85,6 +85,8 @@ const usersSlice = createSlice({
         id: payload.userData?.id,
         userName: payload.userData?.userName,
         email: payload.userData?.email,
+        location: payload.userData?.location,
+        phoneNumber: payload.userData?.phoneNumber,
         avatar: payload.userData?.avatar,
         cars: payload.userData?.cars,
       },

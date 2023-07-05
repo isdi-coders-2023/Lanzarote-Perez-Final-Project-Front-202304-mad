@@ -5,6 +5,13 @@
   display: flex;
 }
 
+.car_card_actions {
+  margin-top: 0.3rem;
+  margin-right: 0.3rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .car_card_image {
   margin: 0;
   margin-right: 0.75rem;
@@ -14,8 +21,13 @@ img {
   object-fit: cover;
 }
 
+.car_panel {
+  display: flex;
+  flex-direction: column;
+}
+
 .car_card_info {
-  font-size: smaller;
+  font-size: 1.2rem;
   color: black;
   display: flex;
   margin: 1rem;

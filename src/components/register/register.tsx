@@ -20,6 +20,7 @@ export default function Register() {
       headers: {},
       body: data,
     });
+    console.log(response.body);
     const state = await response.json();
 
     if (state.error) {
@@ -45,10 +46,32 @@ export default function Register() {
     <div className="loaded-route">
       <form className="register-form" id="form" onSubmit={handleRegister}>
         <h2 className="title_form">REGISTER</h2>
-        <input type="text" placeholder="Username" name="userName"></input>
-        <input type="text" placeholder="Email" name="email"></input>
-        <input type="password" placeholder="Password" name="password"></input>
-        <input type="file" placeholder="Avatar" name="avatar"></input>
+        <input
+          type="text"
+          placeholder="Username"
+          name="userName"
+          required
+        ></input>
+        <input type="email" placeholder="Email" name="email" required></input>
+        <input
+          type="text"
+          placeholder="Location"
+          name="location"
+          required
+        ></input>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          required
+        ></input>
+        <input
+          type="text"
+          placeholder="Phone number"
+          name="phoneNumber"
+          required
+        ></input>
+        <input type="file" placeholder="Avatar" name="avatar" required></input>
         <button type="submit" className="login_button">
           SUBMIT
         </button>
