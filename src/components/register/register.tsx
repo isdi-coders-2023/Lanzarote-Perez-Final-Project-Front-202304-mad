@@ -8,9 +8,9 @@ export default function Register() {
   const navigate = useNavigate();
 
   const handleRegister = async (event: SyntheticEvent) => {
-    const formRegisterElement: HTMLFormElement =
-      document.querySelector(".register-form")!;
     event.preventDefault();
+    const formRegisterElement: HTMLFormElement =
+      event.target as HTMLFormElement;
 
     const data = new FormData(formRegisterElement);
 

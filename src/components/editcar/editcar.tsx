@@ -21,7 +21,22 @@ export function EditCarForm() {
     const formRegisterElement: HTMLFormElement =
       event.target as HTMLFormElement;
 
-    const data = formRegisterElement;
+    const data: Partial<Car> = {
+      id: car.id,
+      carBrand: (
+        formRegisterElement.elements.namedItem("carBrand") as HTMLFormElement
+      ).value,
+      carModel: (
+        formRegisterElement.elements.namedItem("carModel") as HTMLFormElement
+      ).value,
+      carYear: (
+        formRegisterElement.elements.namedItem("carYear") as HTMLFormElement
+      ).value,
+      carHP: (
+        formRegisterElement.elements.namedItem("carHP") as HTMLFormElement
+      ).value,
+    };
+
     await handleEditCar(data);
     navigate("/garage");
   };
@@ -30,10 +45,10 @@ export function EditCarForm() {
     <div className="loaded-route">
       <form className="car-form" id="form" onSubmit={handleEditForm}>
         <h2 className="title_form">Edit your car</h2>
-        <input type="text" placeholder={car.carBrand} name="carBrand"></input>
-        <input type="text" placeholder={car.carModel} name="carModel"></input>
-        <input type="text" placeholder={car.carYear} name="carYear"></input>
-        <input type="text" placeholder={car.carHP} name="carHP"></input>
+        <input type="text" defaultValue={car.carBrand} name="carBrand"></input>
+        <input type="text" defaultValue={car.carModel} name="carModel"></input>
+        <input type="text" defaultValue={car.carYear} name="carYear"></input>
+        <input type="text" defaultValue={car.carHP} name="carHP"></input>
         <button type="submit" className="login_button">
           SUBMIT
         </button>
