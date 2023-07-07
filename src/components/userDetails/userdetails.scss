@@ -1,16 +1,45 @@
 .user_details_card {
-  width: 90%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   height: fit-content;
+  background-color: gray;
+  border: 4px solid white;
+  border-radius: 1.5rem;
+}
+
+.car_card_info {
+  padding: 1rem;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  span {
+    margin: 0.5rem;
+  }
+}
+
+.user_properties {
+  margin: 1.5rem;
 }
 
 .car_card {
   display: flex;
   background-color: grey;
   border: 2px solid black;
+  border-radius: 1rem;
+
+  figure {
+    display: flex;
+  }
+}
+.car_image {
+  border-radius: 1rem;
+  width: 10rem;
 }
 
 .user_details_image {
-  width: 18rem;
+  margin-top: 0.5rem;
+  border-radius: 1.5rem;
+  border: 2px solid white;
+  width: 10rem;
 }

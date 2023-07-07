@@ -38,7 +38,7 @@ export default function Login() {
         </span> */}
         <input type="text" placeholder="Username / Email" name="user"></input>
         <input type="password" placeholder="Password" name="password"></input>
-        <button type="submit" className="login_button">
+        <button type="submit" className="login_button_submit">
           SUBMIT
         </button>
       </form>

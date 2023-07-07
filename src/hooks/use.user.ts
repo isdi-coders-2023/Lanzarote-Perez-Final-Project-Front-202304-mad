@@ -5,6 +5,7 @@ import { useCallback, useMemo } from "react";
 import {
   State,
   ac,
+  loadFilteredUsersAsync,
   loadUsersAsync,
   loginUserAsync,
   registerUserAsync,
@@ -21,6 +22,10 @@ export function useUsers() {
   const handleLoadUsers = useCallback(async () => {
     dispatch(loadUsersAsync(repo));
   }, [repo, dispatch]);
+
+  const handleFilterUsers = async (filter: string) => {
+    dispatch(loadFilteredUsersAsync({ repo, filter }));
+  };
 
   const handleRegisterUser = async (data: Partial<User>) => {
     dispatch(registerUserAsync({ repo, data }));
@@ -48,8 +53,9 @@ export function useUsers() {
 
   return {
     handleLoadUsers,
-    handleRegisterUser,
     handleLoginUser,
+    handleRegisterUser,
+    handleFilterUsers,
     handleLoginWithToken,
     token: token,
     handleGetToken,

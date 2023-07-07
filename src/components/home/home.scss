@@ -9,6 +9,7 @@
   background-color: white;
   transition: transform 0.8s;
   justify-content: space-around;
+  margin: 0;
 }
 
 .user_card:hover {
@@ -34,8 +35,9 @@
 .user_list {
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 0.7fr);
+  grid-template-rows: repeat(2, 0.7fr);
+  column-gap: 0.5rem;
 }
 
 figure {

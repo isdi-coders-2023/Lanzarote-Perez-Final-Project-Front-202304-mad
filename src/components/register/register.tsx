@@ -54,12 +54,6 @@ export default function Register() {
         ></input>
         <input type="email" placeholder="Email" name="email" required></input>
         <input
-          type="text"
-          placeholder="Location"
-          name="location"
-          required
-        ></input>
-        <input
           type="password"
           placeholder="Password"
           name="password"
@@ -71,6 +65,22 @@ export default function Register() {
           name="phoneNumber"
           required
         ></input>
+        <select name="location">
+          <option value="Aragón">Aragón</option>
+          <option value="Asturias">Asturias</option>
+          <option value="Andalucía">Andalucía</option>
+          <option value="Cantabria">Cantabria</option>
+          <option value="Cataluña">Cataluña</option>
+          <option value="Castilla-La Mancha">Castilla-La Mancha</option>
+          <option value="Extremadura">Extremadura</option>
+          <option value="Galicia">Galicia</option>
+          <option value="Pais Vasco">Pais Vasco</option>
+          <option value="La Rioja">La Rioja</option>
+          <option value="Madrid">Madrid</option>
+          <option value="Murcia">Murcia</option>
+          <option value="Navarra">Navarra</option>
+          <option value="Valencia">Valencia</option>
+        </select>
         <input type="file" placeholder="Avatar" name="avatar" required></input>
         <button type="submit" className="login_button">
           SUBMIT

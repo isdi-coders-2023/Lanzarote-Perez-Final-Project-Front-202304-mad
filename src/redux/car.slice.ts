@@ -36,6 +36,18 @@ export const registerCarAsync = createAsyncThunk<
   return await repo.register(data);
 });
 
+export const deleteCarAsync = createAsyncThunk<
+  string,
+  { repo: CarRepository; id: string }
+>("cars/deleteByID", async ({ id, repo }, thunkAPI) => {
+  try {
+    await repo.deleteById(id);
+    return id;
+  } catch (error) {
+    return thunkAPI.rejectWithValue("ID not found");
+  }
+});
+
 export const editCarAsync = createAsyncThunk<
   Car,
   { repo: CarRepository; data: Partial<Car> }

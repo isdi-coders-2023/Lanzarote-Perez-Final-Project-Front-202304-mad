@@ -30,6 +30,14 @@ export const loadUsersAsync = createAsyncThunk(
   }
 );
 
+export const loadFilteredUsersAsync = createAsyncThunk<
+  User[],
+  { repo: UserRepository; filter: string }
+>("users/loadFilter", async ({ repo, filter }) => {
+  const response = await repo.filter(filter);
+  return response;
+});
+
 export const registerUserAsync = createAsyncThunk<
   User,
   { repo: UserRepository; data: Partial<User> }
@@ -72,6 +80,10 @@ const usersSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(loadUsersAsync.fulfilled, (state, { payload }) => ({
+      ...state,
+      userList: payload,
+    }));
+    builder.addCase(loadFilteredUsersAsync.fulfilled, (state, { payload }) => ({
       ...state,
       userList: payload,
     }));

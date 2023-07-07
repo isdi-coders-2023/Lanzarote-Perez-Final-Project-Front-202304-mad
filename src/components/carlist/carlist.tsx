@@ -5,18 +5,13 @@ import "./carlist.scss";
 import { CarlistCard } from "../carlistCard/carlistcard";
 import { useEffect } from "react";
 import { useCars } from "../../hooks/use.cars";
+import jwtDecode from "jwt-decode";
+import { User } from "../../models/user";
+import { useUsers } from "../../hooks/use.user";
 
 export function CarList() {
+  const { handleLoginWithToken } = useUsers();
   const { userData } = useSelector((state: RootState) => state.users);
-  const { handleLoadCars } = useCars();
-
-  const handleCars = async () => {
-    await handleLoadCars();
-  };
-
-  useEffect(() => {
-    handleCars();
-  }, []);
 
   return (
     <div className="cars_container">

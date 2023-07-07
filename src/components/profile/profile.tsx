@@ -11,7 +11,7 @@ export function Profile() {
       <div className="profile_card" key={userData.id}>
         <figure className="profile_image">
           <img
-            src={imageUrl + userData.avatar?.urlOriginal}
+            src={userData.avatar?.imageUrl}
             width={"200"}
             alt={userData.userName}
           ></img>

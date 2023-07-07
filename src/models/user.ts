@@ -6,6 +6,21 @@ export type User = {
   userName: string;
   email: string;
   location: string;
+  // | "Galicia"
+  // | "Cantabria"
+  // | "Castilla y León"
+  // | "Castilla-La Mancha"
+  // | "Asturias"
+  // | "Pais Vasco"
+  // | "Navarra"
+  // | "La Rioja"
+  // | "Aragón"
+  // | "Cataluña"
+  // | "Valencia"
+  // | "Madrid"
+  // | "Extremadura"
+  // | "Andalucia"
+  // | "Murcia";
   phoneNumber: string;
   password: string;
   avatar: Avatar;
