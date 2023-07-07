@@ -22,6 +22,17 @@ export class UserRepository extends ApiRepository<User> {
     return (await data).items;
   }
 
+  async filter(filter: string): Promise<User[]> {
+    const response = await fetch(this.url + "user" + filter);
+    if (!response.ok) {
+      const message = `Error: ${response.status}. ${response.statusText}`;
+      throw new Error(message);
+    }
+
+    const data = response.json() as Promise<ApiResponse>;
+    return (await data).items;
+  }
+
   async register(data: Partial<User>): Promise<User> {
     const response = await fetch(this.url + "user/register", {
       method: "POST",

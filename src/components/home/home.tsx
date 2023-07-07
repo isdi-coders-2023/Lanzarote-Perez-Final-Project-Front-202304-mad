@@ -6,6 +6,7 @@ import { RootState } from "../../redux/store";
 import { User } from "../../models/user";
 import { Card } from "../card/card";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { Filter } from "../filter/filter";
 
 export default function Home() {
   const { handleLoadUsers } = useUsers();
@@ -23,7 +24,7 @@ export default function Home() {
 
   return (
     <div className="loaded-route">
-      <h1 className="home_title">HOME</h1>
+      <Filter></Filter>
       <InfiniteScroll
         dataLength={userList.length}
         next={handleLoadUsers}

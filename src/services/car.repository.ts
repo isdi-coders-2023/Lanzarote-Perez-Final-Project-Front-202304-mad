@@ -6,7 +6,7 @@ type ApiResponse = {
 };
 
 export class CarRepository extends ApiRepository<Car> {
-  constructor(public url: string) {
+  constructor(public url: string, public token: string) {
     super(url);
   }
 
@@ -26,10 +26,7 @@ export class CarRepository extends ApiRepository<Car> {
       method: "POST",
       body: data,
       headers: {
-        Authorization: `Bearer ${
-          localStorage.getItem("store")
-          //!.slice(10).split('"')[0]
-        }`,
+        Authorization: `Bearer ${localStorage.getItem("store")}`,
       },
     });
 
@@ -47,5 +44,17 @@ export class CarRepository extends ApiRepository<Car> {
     });
 
     return response.json() as Promise<Car>;
+  }
+
+  async deleteById(id: Car["id"]) {
+    const url = this.url + "car/delete/" + id;
+    const response = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    });
+    if (!response.ok)
+      throw new Error("Error HTTP: " + response.status + response.statusText);
   }
 }

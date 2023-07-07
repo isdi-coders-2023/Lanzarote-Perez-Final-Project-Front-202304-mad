@@ -9,8 +9,6 @@ import { RootState } from "../../redux/store";
 export function Header({ children }: { children: JSX.Element }) {
   const navigate = useNavigate();
 
-  const imageUrl = "http://localhost:4400/";
-
   const { token, userData } = useSelector((state: RootState) => state.users);
 
   const handleUser = () => {
@@ -50,7 +48,7 @@ export function Header({ children }: { children: JSX.Element }) {
               </div>
               <figure className="image_container">
                 <img
-                  src={imageUrl + userData.avatar?.urlOriginal}
+                  src={userData.avatar?.imageUrl}
                   height={"50px"}
                   width={"50px"}
                 ></img>

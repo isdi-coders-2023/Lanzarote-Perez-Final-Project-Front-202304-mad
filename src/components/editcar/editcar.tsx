@@ -5,14 +5,17 @@ import "./editcar.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
+import { useUsers } from "../../hooks/use.user";
 
 export function EditCarForm() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { carList } = useSelector((state: RootState) => state.cars);
+  const { userData } = useSelector((state: RootState) => state.users);
   const { handleEditCar } = useCars();
+  const { handleLoginWithToken } = useUsers();
 
-  const car: Car = carList.find((item: Car) => item.id === id) as Car;
+  const car: Car = userData.cars?.find((item: Car) => item.id === id) as Car;
+  console.log(userData.cars);
   console.log(car, "yyyyyyyyyyyyyyy");
 
   const handleEditForm = async (event: SyntheticEvent) => {
