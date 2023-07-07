@@ -35,6 +35,10 @@ export function useUsers() {
     dispatch(loginUserAsync({ repo, data }));
   };
 
+  // const handleRefreshCars = async (data: Partial<User>) => {
+  //   dispatch(refreshCars({ repo, data }));
+  // };
+
   const handleLoginWithToken = async (
     userData: Partial<User>,
     token: string
@@ -54,6 +58,7 @@ export function useUsers() {
   return {
     handleLoadUsers,
     handleLoginUser,
+    // handleRefreshCars,
     handleRegisterUser,
     handleFilterUsers,
     handleLoginWithToken,

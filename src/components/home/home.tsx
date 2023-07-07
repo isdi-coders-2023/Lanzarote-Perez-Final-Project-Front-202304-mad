@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { User } from "../../models/user";
 import { Card } from "../card/card";
-import InfiniteScroll from "react-infinite-scroll-component";
 import { Filter } from "../filter/filter";
 
 export default function Home() {
@@ -22,22 +21,32 @@ export default function Home() {
     handleUsers();
   }, []);
 
+  const checkUserList = () => {
+    if (userList.length === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   return (
     <div className="loaded-route">
       <Filter></Filter>
-      <InfiniteScroll
+      {/* <InfiniteScroll
         dataLength={userList.length}
         next={handleLoadUsers}
         hasMore={true} // Replace with a condition based on your data source
         loader={<p>Loading...</p>}
         endMessage={<p>No more data to load.</p>}
-      >
-        <div className="user_list">
-          {userList.map((item: User) => (
-            <Card item={item} key={item.id}></Card>
-          ))}
-        </div>
-      </InfiniteScroll>
+      > */}
+      <div className="user_list">
+        {checkUserList() ? (
+          userList.map((item: User) => <Card item={item} key={item.id}></Card>)
+        ) : (
+          <h3>Lo sentimos, no hay usuarios de esta región.</h3>
+        )}
+      </div>
+      {/* </InfiniteScroll> */}
     </div>
   );
 }
