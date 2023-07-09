@@ -1,6 +1,6 @@
-import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { User } from "../models/user";
-import { UserRepository } from "../services/user.repository";
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { User } from '../models/user';
+import { UserRepository } from '../services/user.repository';
 
 export type Avatar = {
   urlOriginal: string;
@@ -16,14 +16,19 @@ export type State = {
   token?: string;
 };
 
+export type LoginState = {
+  userData: Partial<User>;
+  token?: string;
+};
+
 const initialState: State = {
-  userList: [],
-  token: "",
+  userList: [] as User[],
+  token: '',
   userData: {} as Partial<User>,
 };
 
 export const loadUsersAsync = createAsyncThunk(
-  "users/load",
+  'users/load',
   async (repo: UserRepository) => {
     const response = await repo.query();
     return response;
@@ -33,7 +38,7 @@ export const loadUsersAsync = createAsyncThunk(
 export const loadFilteredUsersAsync = createAsyncThunk<
   User[],
   { repo: UserRepository; filter: string }
->("users/loadFilter", async ({ repo, filter }) => {
+>('users/loadFilter', async ({ repo, filter }) => {
   const response = await repo.filter(filter);
   return response;
 });
@@ -41,38 +46,35 @@ export const loadFilteredUsersAsync = createAsyncThunk<
 export const registerUserAsync = createAsyncThunk<
   User,
   { repo: UserRepository; data: Partial<User> }
->("users/register", async ({ repo, data }) => {
+>('users/register', async ({ repo, data }) => {
   return await repo.register(data);
 });
 
 export const loginUserAsync = createAsyncThunk<
   Partial<State>,
   { repo: UserRepository; data: Partial<User> }
->("users/login", async ({ repo, data }) => {
+>('users/login', async ({ repo, data }) => {
   const result = await repo.login(data);
   console.log({ result });
 
   const loggedUser = result.token;
   console.log(loggedUser);
-  localStorage.setItem("store", loggedUser as string);
+  localStorage.setItem('store', loggedUser as string);
   return result;
 });
 
 const usersSlice = createSlice({
-  name: "users",
+  name: 'users',
   initialState,
   reducers: {
     getToken: (state, { payload }: PayloadAction<string>) => {
       state.token = payload;
     },
-    logout: (state, { payload }: PayloadAction<State>) => ({
+    logout: (state) => ({
       ...state,
       token: undefined,
     }),
-    loginWithToken: (
-      state: Partial<State>,
-      { payload }: PayloadAction<Partial<State>>
-    ) => ({
+    loginWithToken: (state, { payload }: PayloadAction<LoginState>) => ({
       ...state,
       token: payload.token,
       userData: payload.userData,

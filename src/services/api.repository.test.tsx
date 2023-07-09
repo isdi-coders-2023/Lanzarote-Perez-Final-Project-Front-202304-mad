@@ -1,69 +1,99 @@
-import { Character } from "../users/models/character";
-import { ApiRepository } from "./api.repository";
+import { ApiRepository } from './api.repository';
 
-describe("Given an ApiRepository", () => {
-  describe("When it calls to the method getAll", () => {
-    test("Then it should fetch data from the API and return the response", async () => {
-      const expectedUrl = `https://rickandmortyapi.com/api/character`;
-      const mockCharacters: Character[] = [
-        {
-          id: 1,
-          name: "Homer Simpson",
-          image: "homer.jpg",
-          gender: "Masculino",
-          status: "alive",
-          species: "alien",
-          url: "",
-          next: "",
-          prev: "",
-        },
-      ] as unknown as Character[];
+describe('ApiRepository', () => {
+  let repository: ApiRepository<any>;
+  let fetchMock: jest.Mock;
 
-      const mockResponse = {
-        docs: mockCharacters,
-      };
+  beforeEach(() => {
+    fetchMock = jest.fn();
+    global.fetch = fetchMock;
+  });
 
-      global.fetch = jest.fn().mockResolvedValue({
-        ok: true,
-        json: jest.fn().mockResolvedValue(mockResponse),
-      });
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
 
-      const repo = new ApiRepository(expectedUrl);
-      const response = await repo.getAll(expectedUrl);
-
-      expect(global.fetch).toHaveBeenCalledWith(expectedUrl);
-      expect(response).toEqual(mockResponse);
+  test('getAll should fetch data from the correct URL and return the JSON response', async () => {
+    const data = [
+      { id: 1, name: 'Item 1' },
+      { id: 2, name: 'Item 2' },
+    ];
+    const url = 'http://example.com/items';
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: jest.fn().mockResolvedValueOnce(data),
     });
+    repository = new ApiRepository(url);
 
-    test("Then it should throw an error if the fetch is not successful", async () => {
-      const expectedUrl = `https://rickandmortyapi.com/api/character/randompage`;
-      const mockErrorMessage = "Error";
+    const result = await repository.getAll(url);
 
-      global.fetch = jest.fn().mockResolvedValue({
-        ok: false,
-        status: 400,
-        statusText: "Error",
-      });
+    expect(fetchMock).toHaveBeenCalledWith(url);
+    expect(result).toEqual(data);
+  });
 
-      const repo = new ApiRepository(expectedUrl);
-
-      expect(repo.getAll(expectedUrl)).rejects.toThrow(mockErrorMessage);
-
-      expect(global.fetch).toHaveBeenCalledWith(expectedUrl);
+  test('getAll should throw an error if the response is not OK', async () => {
+    const url = 'http://example.com/items';
+    const errorMessage = 'Error: 404. Not Found';
+    fetchMock.mockResolvedValueOnce({
+      ok: false,
+      status: 404,
+      statusText: 'Not Found',
     });
+    repository = new ApiRepository(url);
 
-    // test("Then it should throw an error if the fetch is not successful", async () => {
-    //   const filter = `alien`;
+    await expect(repository.getAll(url)).rejects.toThrow(errorMessage);
+    expect(fetchMock).toHaveBeenCalled();
+  });
 
-    //   global.fetch = jest.fn().mockResolvedValue({
-    //     ok: false,
-    //     status: 400,
-    //     statusText: "Error",
-    //   });
+  test('getFiltered should fetch data from the correct URL and return the JSON response', async () => {
+    const data = [
+      { id: 1, name: 'Item 1' },
+      { id: 2, name: 'Item 2' },
+    ];
+    const mockFilter = '?location=Madrid';
+    const url = 'http://example.com/items';
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: jest.fn().mockResolvedValueOnce(data),
+    });
+    repository = new ApiRepository(url);
 
-    //   const repo = new ApiRepository(filter);
+    const result = await repository.getFiltered(mockFilter);
 
-    //   expect(repo.getFiltered(filter)).toHaveBeenCalled;
-    // });
+    expect(fetchMock).toHaveBeenCalledWith(url + mockFilter);
+    expect(result).toEqual(data);
+  });
+
+  test('getFiltered should throw an error if the response is not ok', async () => {
+    const mockFilter = '?gdgdgd=Madrid';
+    const url = 'http://example.com/items';
+    const errorMessage = 'Error: 404. Not Found';
+    fetchMock.mockResolvedValueOnce({
+      ok: false,
+      status: 404,
+      statusText: 'Not Found',
+    });
+    repository = new ApiRepository(url);
+
+    await expect(repository.getFiltered(mockFilter)).rejects.toThrow(
+      errorMessage
+    );
+    expect(fetchMock).toHaveBeenCalled;
+  });
+
+  test('get should fetch data for a specific item from the correct URL and return the JSON response', async () => {
+    const itemId = 1;
+    const item = { id: 1, name: 'Item 1' };
+    const url = 'http://example.com/items/' + itemId;
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: jest.fn().mockResolvedValueOnce(item),
+    });
+    repository = new ApiRepository(url);
+
+    const result = await repository.get(itemId);
+
+    expect(fetchMock).toHaveBeenCalled();
+    expect(result).toEqual(item);
   });
 });

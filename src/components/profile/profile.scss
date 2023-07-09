@@ -6,24 +6,53 @@
 }
 
 .profile_card {
-  width: 50%;
+  width: 20em;
   display: flex;
   height: 50%;
   flex-direction: column;
-  background-color: grey;
+  background-color: rgba(0, 0, 0, 0.7);
   border: 2px double white;
   align-items: center;
 }
 
 .profile_image {
-  margin: 0;
+  width: 100%;
+  margin: 1em 0;
+  img {
+    border-radius: 100%;
+  }
 }
 
 .profile_info {
   display: flex;
-  margin-top: 1rem;
+  margin: 1rem;
   font-size: 1.5rem;
   width: 100%;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
+  margin-bottom: 2em;
+  color: white;
+
+  span {
+    margin: 0 3em;
+    display: flex;
+    align-items: center;
+  }
+
+  .profile_card_title {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+  }
+}
+
+.icon path {
+  stroke: white;
+}
+
+.icon {
+  margin-right: 0.3em;
 }

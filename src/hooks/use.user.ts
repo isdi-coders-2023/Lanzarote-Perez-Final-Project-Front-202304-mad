@@ -1,6 +1,6 @@
-import { useSelector, useDispatch } from "react-redux";
-import { AppDispatch } from "../redux/store";
-import { useCallback, useMemo } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { AppDispatch } from '../redux/store';
+import { useCallback, useMemo } from 'react';
 
 import {
   State,
@@ -9,14 +9,14 @@ import {
   loadUsersAsync,
   loginUserAsync,
   registerUserAsync,
-} from "../redux/user.Slice";
-import { User } from "../models/user";
-import { UserRepository } from "../services/user.repository";
+} from '../redux/user.Slice';
+import { User } from '../models/user';
+import { UserRepository } from '../services/user.repository';
 
 export function useUsers() {
   const { token } = useSelector((state: State) => state);
   const dispatch: AppDispatch = useDispatch();
-  const url = "http://localhost:4400/";
+  const url = 'http://localhost:4400/';
   const repo: UserRepository = useMemo(() => new UserRepository(url), []);
 
   const handleLoadUsers = useCallback(async () => {
@@ -35,24 +35,20 @@ export function useUsers() {
     dispatch(loginUserAsync({ repo, data }));
   };
 
-  // const handleRefreshCars = async (data: Partial<User>) => {
-  //   dispatch(refreshCars({ repo, data }));
-  // };
-
   const handleLoginWithToken = async (
     userData: Partial<User>,
     token: string
   ) => {
-    dispatch(ac.loginWithToken({ token, userData }));
+    dispatch(ac.loginWithToken({ userData, token }));
   };
 
   const handleGetToken = (token: string) => {
     dispatch(ac.getToken(token));
   };
 
-  const handleLogoutUser = (state: State) => {
-    dispatch(ac.logout(state));
-    localStorage.removeItem("store");
+  const handleLogoutUser = () => {
+    dispatch(ac.logout());
+    localStorage.removeItem('store');
   };
 
   return {

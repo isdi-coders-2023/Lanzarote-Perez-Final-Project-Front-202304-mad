@@ -1,7 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { User } from "../../models/user";
-import "./card.scss";
-
 type PropsType = {
   item: User;
 };
