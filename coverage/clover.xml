@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688923424788" clover="3.2.0">
-  <project timestamp="1688923424788" name="All files">
-    <metrics statements="365" coveredstatements="172" conditionals="27" coveredconditionals="8" methods="110" coveredmethods="44" elements="502" coveredelements="224" complexity="0" loc="365" ncloc="365" packages="19" files="24" classes="24"/>
+<coverage generated="1688982427178" clover="3.2.0">
+  <project timestamp="1688982427178" name="All files">
+    <metrics statements="393" coveredstatements="169" conditionals="27" coveredconditionals="6" methods="114" coveredmethods="54" elements="534" coveredelements="229" complexity="0" loc="393" ncloc="393" packages="21" files="26" classes="26"/>
     <package name="components">
       <metrics statements="22" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="App.tsx" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/components/App.tsx">
@@ -31,33 +31,50 @@
       </file>
     </package>
     <package name="components.app.routes">
-      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="11" coveredmethods="5"/>
+      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="11" coveredmethods="9"/>
       <file name="app.routes.tsx" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/components/app.routes/app.routes.tsx">
-        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="11" coveredmethods="5"/>
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="11" coveredmethods="9"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
       </file>
     </package>
     <package name="components.card">
-      <metrics statements="6" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="card.tsx" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/components/card/card.tsx">
-        <metrics statements="6" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.carform">
+      <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="carform.tsx" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/components/carform/carform.tsx">
+        <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
       </file>
     </package>
     <package name="components.carlist">
@@ -90,20 +107,22 @@
       </file>
     </package>
     <package name="components.carlistCard">
-      <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="13" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="carlistcard.tsx" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/components/carlistCard/carlistcard.tsx">
-        <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <metrics statements="13" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
       </file>
     </package>
     <package name="components.editcar">
@@ -141,19 +160,19 @@
       </file>
     </package>
     <package name="components.filter">
-      <metrics statements="10" coveredstatements="6" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="10" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="filter.tsx" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/components/filter/filter.tsx">
-        <metrics statements="10" coveredstatements="6" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
+        <metrics statements="10" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
       </file>
     </package>
     <package name="components.footer">
@@ -206,29 +225,51 @@
       </file>
     </package>
     <package name="components.home">
-      <metrics statements="20" coveredstatements="18" conditionals="4" coveredconditionals="2" methods="6" coveredmethods="5"/>
+      <metrics statements="20" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
       <file name="home.tsx" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/components/home/home.tsx">
-        <metrics statements="20" coveredstatements="18" conditionals="4" coveredconditionals="2" methods="6" coveredmethods="5"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="26" count="1" type="stmt"/>
+        <metrics statements="20" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.login">
+      <metrics statements="16" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="login.tsx" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/components/login/login.tsx">
+        <metrics statements="16" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
       </file>
     </package>
     <package name="components.menu">
@@ -307,136 +348,135 @@
       </file>
     </package>
     <package name="hooks">
-      <metrics statements="54" coveredstatements="27" conditionals="0" coveredconditionals="0" methods="17" coveredmethods="7"/>
+      <metrics statements="54" coveredstatements="43" conditionals="0" coveredconditionals="0" methods="17" coveredmethods="12"/>
       <file name="use.cars.ts" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/hooks/use.cars.ts">
-        <metrics statements="29" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
+        <metrics statements="29" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="18" count="11" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
+        <line num="58" count="4" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
         <line num="66" count="0" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
+        <line num="73" count="4" type="stmt"/>
       </file>
       <file name="use.user.ts" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/hooks/use.user.ts">
-        <metrics statements="25" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="7"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="17" count="14" type="stmt"/>
-        <line num="18" count="7" type="stmt"/>
-        <line num="19" count="7" type="stmt"/>
-        <line num="20" count="7" type="stmt"/>
-        <line num="22" count="7" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="26" count="7" type="stmt"/>
+        <metrics statements="25" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="6"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="30" count="7" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
-        <line num="34" count="7" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
-        <line num="38" count="7" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
-        <line num="45" count="7" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
-        <line num="49" count="7" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
-        <line num="54" count="7" type="stmt"/>
+        <line num="54" count="3" type="stmt"/>
       </file>
     </package>
     <package name="redux">
-      <metrics statements="50" coveredstatements="39" conditionals="0" coveredconditionals="0" methods="20" coveredmethods="12"/>
+      <metrics statements="49" coveredstatements="46" conditionals="0" coveredconditionals="0" methods="20" coveredmethods="19"/>
       <file name="car.slice.ts" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/redux/car.slice.ts">
-        <metrics statements="19" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="1"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="39" count="3" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="51" count="3" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="58" count="3" type="stmt"/>
-        <line num="63" count="3" type="stmt"/>
-        <line num="67" count="3" type="stmt"/>
-        <line num="71" count="3" type="stmt"/>
-        <line num="78" count="3" type="stmt"/>
+        <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="32" count="5" type="stmt"/>
+        <line num="36" count="4" type="stmt"/>
+        <line num="39" count="5" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="51" count="5" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="58" count="5" type="stmt"/>
+        <line num="63" count="5" type="stmt"/>
+        <line num="67" count="5" type="stmt"/>
+        <line num="71" count="5" type="stmt"/>
+        <line num="78" count="5" type="stmt"/>
       </file>
       <file name="store.ts" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/redux/store.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
       </file>
       <file name="user.Slice.ts" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/redux/user.Slice.ts">
-        <metrics statements="27" coveredstatements="24" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="11"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
-        <line num="30" count="3" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
+        <metrics statements="26" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="11"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="30" count="5" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
+        <line num="38" count="5" type="stmt"/>
         <line num="42" count="1" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
-        <line num="46" count="3" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
         <line num="50" count="3" type="stmt"/>
-        <line num="53" count="3" type="stmt"/>
+        <line num="53" count="5" type="stmt"/>
         <line num="57" count="3" type="stmt"/>
-        <line num="58" count="2" type="stmt"/>
-        <line num="60" count="2" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
         <line num="61" count="0" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="66" count="3" type="stmt"/>
-        <line num="71" count="3" type="stmt"/>
-        <line num="73" count="1" type="stmt"/>
-        <line num="77" count="1" type="stmt"/>
-        <line num="84" count="3" type="stmt"/>
-        <line num="88" count="3" type="stmt"/>
-        <line num="92" count="3" type="stmt"/>
-        <line num="96" count="3" type="stmt"/>
-        <line num="112" count="3" type="stmt"/>
-        <line num="113" count="3" type="stmt"/>
+        <line num="65" count="5" type="stmt"/>
+        <line num="70" count="3" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="83" count="5" type="stmt"/>
+        <line num="87" count="5" type="stmt"/>
+        <line num="91" count="5" type="stmt"/>
+        <line num="95" count="5" type="stmt"/>
+        <line num="111" count="5" type="stmt"/>
+        <line num="112" count="5" type="stmt"/>
       </file>
     </package>
     <package name="services">
       <metrics statements="53" coveredstatements="53" conditionals="6" coveredconditionals="6" methods="14" coveredmethods="14"/>
       <file name="api.repository.ts" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/services/api.repository.ts">
         <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="2" count="22" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="24" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="7" count="1" type="stmt"/>
@@ -452,32 +492,32 @@
       </file>
       <file name="car.repository.ts" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/services/car.repository.ts">
         <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="6" type="stmt"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
         <line num="15" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
-        <line num="50" count="2" type="stmt"/>
-        <line num="51" count="2" type="stmt"/>
+        <line num="50" count="3" type="stmt"/>
+        <line num="51" count="3" type="stmt"/>
         <line num="57" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="58" count="1" type="stmt"/>
       </file>
       <file name="user.repository.ts" path="/Users/lanza/Desktop/ISDI/Trabajo Final/frontend/src/services/user.repository.ts">
         <metrics statements="21" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="11" type="stmt"/>
-        <line num="11" count="11" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
         <line num="16" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>

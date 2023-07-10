@@ -1,13 +1,8 @@
-import { SyntheticEvent } from "react";
-import "./carform.scss";
-import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
-import { useCars } from "../../hooks/use.cars";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
+import { SyntheticEvent } from 'react';
+import './carform.scss';
+import { useCars } from '../../hooks/use.cars';
 
 export default function CarForm() {
-  const navigate = useNavigate();
   const { handleNewCar } = useCars();
 
   const SubmitNewCar = async (event: SyntheticEvent) => {

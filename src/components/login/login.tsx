@@ -1,10 +1,8 @@
-import { SyntheticEvent } from "react";
-import "./login.scss";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { storeName, url } from "../../config";
-import Swal from "sweetalert2";
-import { useUsers } from "../../hooks/use.user";
+import { SyntheticEvent } from 'react';
+import './login.scss';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { useUsers } from '../../hooks/use.user';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -16,17 +14,17 @@ export default function Login() {
     const { elements } = event.target! as HTMLFormElement;
 
     const data = {
-      user: (elements.namedItem("user") as HTMLFormElement).value,
-      password: (elements.namedItem("password") as HTMLFormElement).value,
+      user: (elements.namedItem('user') as HTMLFormElement).value,
+      password: (elements.namedItem('password') as HTMLFormElement).value,
     };
     console.log(data);
     await handleLoginUser(data);
 
     Swal.fire({
-      icon: "success",
-      text: "Succesfully logged in!",
+      icon: 'success',
+      text: 'Succesfully logged in!',
     });
-    navigate("/");
+    navigate('/');
   };
 
   return (

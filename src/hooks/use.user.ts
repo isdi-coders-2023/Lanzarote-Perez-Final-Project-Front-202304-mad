@@ -14,7 +14,7 @@ import { User } from '../models/user';
 import { UserRepository } from '../services/user.repository';
 
 export function useUsers() {
-  const { token } = useSelector((state: State) => state);
+  const token = useSelector((state: State) => state.token);
   const dispatch: AppDispatch = useDispatch();
   const url = 'http://localhost:4400/';
   const repo: UserRepository = useMemo(() => new UserRepository(url), []);

@@ -81,8 +81,8 @@ describe('Given the users slice reducer', () => {
       const setItem = jest.fn().mockReturnValue(mockToken);
       store.dispatch(loginUserAsync({ repo: userRepo, data }));
       expect(userRepo.login).toHaveBeenCalledWith(data);
-      expect(localStorage).toBeCalled();
-      expect(setItem).toHaveBeenCalled();
+      expect(localStorage).toBeCalled;
+      expect(setItem).toHaveBeenCalled;
     });
   });
 });
