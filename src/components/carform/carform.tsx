@@ -18,7 +18,12 @@ export default function CarForm() {
   };
 
   return (
-    <form className="car-form hidden" id="form" onSubmit={SubmitNewCar}>
+    <form
+      className="car-form hidden"
+      id="form"
+      role="form"
+      onSubmit={SubmitNewCar}
+    >
       <h2 className="title_form">Add New Car</h2>
       <input type="text" placeholder="Brand" name="carBrand"></input>
       <input type="text" placeholder="Model" name="carModel"></input>

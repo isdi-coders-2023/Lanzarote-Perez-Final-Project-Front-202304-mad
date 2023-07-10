@@ -13,10 +13,10 @@ export default {
   },
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   coveragePathIgnorePatterns: [
+    '<rootDir>/src/components/App.tsx',
     '<rootDir>/src/main.tsx',
     '<rootDir>/src/vite-env.d.ts',
     '<rootDir>/src/components/form',
-    '<rootDir>/src/components/app/app.tsx',
     '<rootDir>/src/config.ts',
   ],
 };

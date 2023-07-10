@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { Car } from "../../models/car";
-import { RootState } from "../../redux/store";
-import "./carlist.scss";
-import { CarlistCard } from "../carlistCard/carlistcard";
-import { useUsers } from "../../hooks/use.user";
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Car } from '../../models/car';
+import { RootState } from '../../redux/store';
+import './carlist.scss';
+import { CarlistCard } from '../carlistCard/carlistcard';
+import { useUsers } from '../../hooks/use.user';
 
 export function CarList() {
   const { handleLoadUsers } = useUsers();
@@ -15,7 +15,7 @@ export function CarList() {
   const ReloadUserList = async () => {
     await handleLoadUsers();
     const desiredUser = userList.find((user) => userData.id === user.id);
-    console.log(desiredUser, "yyyyyeeeeejah");
+    console.log(desiredUser, 'yyyyyeeeeejah');
     return desiredUser;
   };
 

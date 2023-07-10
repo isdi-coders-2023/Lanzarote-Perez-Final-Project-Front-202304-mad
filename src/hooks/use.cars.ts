@@ -1,20 +1,20 @@
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../redux/store";
-import { useCallback, useMemo } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../redux/store';
+import { useCallback, useMemo } from 'react';
 
-import { Car } from "../models/car";
-import { CarRepository } from "../services/car.repository";
+import { Car } from '../models/car';
+import { CarRepository } from '../services/car.repository';
 import {
   deleteCarAsync,
   editCarAsync,
   loadCarsAsync,
   registerCarAsync,
-} from "../redux/car.slice";
-import Swal from "sweetalert2";
+} from '../redux/car.slice';
+import Swal from 'sweetalert2';
+import { url } from '../config';
 
 export function useCars() {
   const dispatch: AppDispatch = useDispatch();
-  const url = "http://localhost:4400/";
   const { token } = useSelector((state: RootState) => state.users);
   const repo: CarRepository = useMemo(
     () => new CarRepository(url, token as string),
@@ -28,14 +28,15 @@ export function useCars() {
   const handleNewCar = async (data: FormData) => {
     try {
       dispatch(registerCarAsync({ repo, data }));
+      console.log('Succesfully registered car');
       return Swal.fire({
-        icon: "success",
-        text: "Succesfully Registered!",
+        icon: 'success',
+        text: 'Succesfully Registered!',
       });
     } catch (error) {
       Swal.fire({
-        icon: "error",
-        text: "Error submitting th",
+        icon: 'error',
+        text: 'Error submitting your new car, please try again',
       });
     }
   };
@@ -44,13 +45,17 @@ export function useCars() {
     try {
       dispatch(editCarAsync({ repo, data }));
       return Swal.fire({
-        icon: "success",
-        text: "Succesfully Registered!",
+        icon: 'success',
+        iconColor: 'red',
+        confirmButtonColor: 'red',
+        timer: 1500,
+        color: 'black',
+        text: 'Succesfully Registered a new car!',
       });
     } catch (error) {
       Swal.fire({
-        icon: "error",
-        text: "Error deleting car",
+        icon: 'error',
+        text: 'Error deleting car',
       });
     }
   };
@@ -59,13 +64,13 @@ export function useCars() {
     try {
       dispatch(deleteCarAsync({ id, repo: repo }));
       return Swal.fire({
-        icon: "success",
-        text: "Succesfully Registered!",
+        icon: 'success',
+        text: 'Succesfully Registered!',
       });
     } catch (error) {
       Swal.fire({
-        icon: "error",
-        text: "Error deleting car",
+        icon: 'error',
+        text: 'Error deleting car',
       });
     }
   };

@@ -12,11 +12,11 @@ import {
 } from '../redux/user.Slice';
 import { User } from '../models/user';
 import { UserRepository } from '../services/user.repository';
+import { url } from '../config';
 
 export function useUsers() {
   const token = useSelector((state: State) => state.token);
   const dispatch: AppDispatch = useDispatch();
-  const url = 'http://localhost:4400/';
   const repo: UserRepository = useMemo(() => new UserRepository(url), []);
 
   const handleLoadUsers = useCallback(async () => {

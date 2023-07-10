@@ -1,2 +1,2 @@
-export const url = "http://localhost:4400/";
-export const storeName = "store";
+export const url = 'https://social-racingclub.onrender.com/';
+export const storeName = 'store';
