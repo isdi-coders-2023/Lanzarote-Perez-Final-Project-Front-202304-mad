@@ -1,15 +1,56 @@
+.car_card_garage {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 80vw;
+}
+
 .car_card_image {
-  border-right: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 13em;
+  width: auto;
   margin: 0;
+
+  img {
+    object-fit: cover;
+    width: auto;
+    height: auto;
+  }
 }
 
 .car_card_info {
-  width: 10rem;
-  background-color: grey;
-  border-top: 2px solid red;
-  margin: 0;
+  border-top: 2px solid black;
+  padding: 1em;
+  color: white;
 
   span {
     margin-left: 0.5rem;
+  }
+}
+
+.action {
+  opacity: 0;
+  color: black;
+  margin: 0.5em;
+  font-size: 3rem;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+}
+
+button {
+  color: black;
+}
+
+.action:hover,
+.action a:hover {
+  color: crimson;
+}
+
+.car_card_image:hover {
+  transition: all 0.2s ease-in-out;
+  .action {
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
   }
 }

@@ -8,7 +8,6 @@ import { RootState } from "../../redux/store";
 
 export function Header({ children }: { children: JSX.Element }) {
   const navigate = useNavigate();
-
   const { token, userData } = useSelector((state: RootState) => state.users);
 
   const handleUser = () => {
