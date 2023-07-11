@@ -15,8 +15,8 @@ type PropsType = {
 export function CarlistCard({ item }: PropsType) {
   const { handleDeleteCar } = useCars();
 
-  const handleDelete = () => {
-    handleDeleteCar(item.id);
+  const handleDelete = async () => {
+    await handleDeleteCar(item.id);
     window.location.reload();
   };
 

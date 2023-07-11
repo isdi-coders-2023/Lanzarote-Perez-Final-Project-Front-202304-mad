@@ -27,7 +27,7 @@ export function useCars() {
 
   const handleNewCar = async (data: FormData) => {
     try {
-      dispatch(registerCarAsync({ repo, data }));
+      await dispatch(registerCarAsync({ repo, data }));
       return Swal.fire({
         width: '20em',
         icon: 'success',
@@ -58,7 +58,7 @@ export function useCars() {
 
   const handleEditCar = async (data: Partial<Car>) => {
     try {
-      dispatch(editCarAsync({ repo, data }));
+      await dispatch(editCarAsync({ repo, data }));
       return Swal.fire({
         width: '20em',
         icon: 'success',
@@ -87,9 +87,9 @@ export function useCars() {
     }
   };
 
-  const handleDeleteCar = (id: string) => {
+  const handleDeleteCar = async (id: string) => {
     try {
-      dispatch(deleteCarAsync({ id, repo: repo }));
+      await dispatch(deleteCarAsync({ id, repo: repo }));
       return Swal.fire({
         width: '20em',
         icon: 'success',
@@ -105,7 +105,7 @@ export function useCars() {
     } catch (error) {
       return Swal.fire({
         width: '20em',
-        icon: 'success',
+        icon: 'error',
         title: 'ERROR DELETING CAR',
         background:
           'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
