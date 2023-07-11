@@ -44,7 +44,12 @@ export function EditCarForm() {
 
   return (
     <div className="loaded-route">
-      <form className="car-form" id="form" onSubmit={handleEditForm}>
+      <form
+        className="car-form"
+        id="form"
+        onSubmit={handleEditForm}
+        aria-label="car-form"
+      >
         <h2 className="title_form">Edit your car</h2>
         <input type="text" defaultValue={car.carBrand} name="carBrand"></input>
         <input type="text" defaultValue={car.carModel} name="carModel"></input>

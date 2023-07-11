@@ -1,6 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { User } from '../models/user';
 import { UserRepository } from '../services/user.repository';
+import { Car } from '../models/car';
 
 export type Avatar = {
   urlOriginal: string;
@@ -55,10 +56,6 @@ export const loginUserAsync = createAsyncThunk<
   { repo: UserRepository; data: Partial<User> }
 >('users/login', async ({ repo, data }) => {
   const result = await repo.login(data);
-
-  const loggedUser = result.token;
-  console.log(loggedUser);
-  localStorage.setItem('store', loggedUser as string);
   return result;
 });
 
@@ -77,6 +74,13 @@ const usersSlice = createSlice({
       ...state,
       token: payload.token,
       userData: payload.userData,
+    }),
+    updateUserDataCars: (state, { payload }: PayloadAction<Car>) => ({
+      ...state,
+      userData: {
+        ...state.userData,
+        cars: [...(state.userData.cars as Car[]), payload],
+      },
     }),
   },
   extraReducers: (builder) => {

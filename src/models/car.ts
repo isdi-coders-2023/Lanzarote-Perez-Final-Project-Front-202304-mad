@@ -4,7 +4,7 @@ export type Car = {
   carBrand: string;
   carModel: string;
   carYear: string;
-  carFuel: "gasoline" | "diesel" | "hybrid" | "electric" | "bioFuel";
+  carFuel: string;
   carHP: string;
 };
 

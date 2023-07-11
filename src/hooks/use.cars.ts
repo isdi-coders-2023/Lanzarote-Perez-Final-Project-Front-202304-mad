@@ -28,15 +28,30 @@ export function useCars() {
   const handleNewCar = async (data: FormData) => {
     try {
       dispatch(registerCarAsync({ repo, data }));
-      console.log('Succesfully registered car');
       return Swal.fire({
+        width: '20em',
         icon: 'success',
-        text: 'Succesfully Registered!',
+        title: 'SUCCESFULLY REGISTERED CAR',
+        background:
+          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
+        color: 'white',
+        iconColor: 'white',
+        showConfirmButton: false,
+        padding: '4em 0',
+        timer: 2000,
       });
     } catch (error) {
-      Swal.fire({
+      return Swal.fire({
+        width: '20em',
         icon: 'error',
-        text: 'Error submitting your new car, please try again',
+        title: 'ERROR REGISTERING CAR' + { error },
+        background:
+          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
+        color: 'white',
+        iconColor: 'white',
+        showConfirmButton: false,
+        padding: '4em 0',
+        timer: 2000,
       });
     }
   };
@@ -45,17 +60,29 @@ export function useCars() {
     try {
       dispatch(editCarAsync({ repo, data }));
       return Swal.fire({
+        width: '20em',
         icon: 'success',
-        iconColor: 'red',
-        confirmButtonColor: 'red',
-        timer: 1500,
-        color: 'black',
-        text: 'Succesfully Registered a new car!',
+        title: 'SUCCESFULLY UPDATED CAR',
+        background:
+          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
+        color: 'white',
+        iconColor: 'white',
+        showConfirmButton: false,
+        padding: '4em 0',
+        timer: 2000,
       });
     } catch (error) {
       Swal.fire({
+        width: '20em',
         icon: 'error',
-        text: 'Error deleting car',
+        title: 'ERROR UPDATING CAR',
+        background:
+          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
+        color: 'white',
+        iconColor: 'white',
+        showConfirmButton: false,
+        padding: '4em 0',
+        timer: 2000,
       });
     }
   };
@@ -64,13 +91,29 @@ export function useCars() {
     try {
       dispatch(deleteCarAsync({ id, repo: repo }));
       return Swal.fire({
+        width: '20em',
         icon: 'success',
-        text: 'Succesfully Registered!',
+        title: 'SUCCESFULLY DELETED CAR',
+        background:
+          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
+        color: 'white',
+        iconColor: 'white',
+        showConfirmButton: false,
+        padding: '4em 0',
+        timer: 2000,
       });
     } catch (error) {
-      Swal.fire({
-        icon: 'error',
-        text: 'Error deleting car',
+      return Swal.fire({
+        width: '20em',
+        icon: 'success',
+        title: 'ERROR DELETING CAR',
+        background:
+          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
+        color: 'white',
+        iconColor: 'white',
+        showConfirmButton: false,
+        padding: '4em 0',
+        timer: 2000,
       });
     }
   };

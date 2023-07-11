@@ -8,7 +8,7 @@ import {
   loadUsersAsync,
   loginUserAsync,
   registerUserAsync,
-} from './user.Slice';
+} from './user.slice';
 
 describe('Given the users slice reducer', () => {
   describe('When it is instantiated', () => {

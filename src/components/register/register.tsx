@@ -1,8 +1,8 @@
-import { SyntheticEvent } from "react";
-import "./register.scss";
-import { url } from "../../config";
-import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { SyntheticEvent } from 'react';
+import './register.scss';
+import { url } from '../../config';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -14,9 +14,9 @@ export default function Register() {
 
     const data = new FormData(formRegisterElement);
 
-    const urlRegister = url + "user/register";
+    const urlRegister = url + 'user/register';
     const response = await fetch(urlRegister, {
-      method: "POST",
+      method: 'POST',
       headers: {},
       body: data,
     });
@@ -25,13 +25,29 @@ export default function Register() {
 
     if (state.error) {
       Swal.fire({
-        icon: "error",
-        text: `${state.error}`,
+        width: '20em',
+        icon: 'error',
+        title: 'ERROR REGISTERING',
+        background:
+          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
+        color: 'white',
+        iconColor: 'white',
+        showConfirmButton: false,
+        padding: '4em 0',
+        timer: 2000,
       });
     } else {
       Swal.fire({
-        icon: "success",
-        text: "Succesfully Registered!",
+        width: '20em',
+        icon: 'success',
+        title: 'SUCCESFULLY REGISTERED',
+        background:
+          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
+        color: 'white',
+        iconColor: 'white',
+        showConfirmButton: false,
+        padding: '4em 0',
+        timer: 2000,
       });
     }
 
@@ -39,7 +55,7 @@ export default function Register() {
 
     state.userData = state.user;
     delete state.user;
-    navigate("/login");
+    navigate('/login');
   };
 
   return (

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">94.11% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>16/17</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">81.81% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>9/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -96,21 +96,19 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,19 +127,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { Suspense, lazy } from "react";</span>
-<span class="cstat-no" title="statement not covered" >import { Routes, Route } from "react-router-dom";</span>
-<span class="cstat-no" title="statement not covered" >import { Profile } from "../profile/profile";</span>
-<span class="cstat-no" title="statement not covered" >import UserDetails from "../userDetails/userdetails";</span>
-<span class="cstat-no" title="statement not covered" >import { EditCarForm } from "../editcar/editcar";</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Suspense, lazy } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Profile } from "../profile/profile";
+import UserDetails from "../userDetails/userdetails";
+import { EditCarForm } from "../editcar/editcar";
 &nbsp;
-const Home = <span class="cstat-no" title="statement not covered" >lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import("</span>../home/home"))</span>;</span>
-const Login = <span class="cstat-no" title="statement not covered" >lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import("</span>../login/login"))</span>;</span>
-const Register = <span class="cstat-no" title="statement not covered" >lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import("</span>../register/register"))</span>;</span>
-const ErrorPage = <span class="cstat-no" title="statement not covered" >lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import("</span>../errorPage/errorPage"))</span>;</span>
-const Garage = <span class="cstat-no" title="statement not covered" >lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import("</span>../garage/garage"))</span>;</span>
-<span class="cstat-no" title="statement not covered" >export function <span class="fstat-no" title="function not covered" >A</span>ppRoutes(</span>) {
-<span class="cstat-no" title="statement not covered" >  return (</span>
+const Home = lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import("</span>../home/home"))</span>;
+const Login = lazy(() =&gt; import("../login/login"));
+const Register = lazy(() =&gt; import("../register/register"));
+const ErrorPage = lazy(() =&gt; import("../errorPage/errorPage"));
+const Garage = lazy(() =&gt; import("../garage/garage"));
+export function AppRoutes() {
+  return (
     &lt;Suspense&gt;
       &lt;Routes&gt;
         &lt;Route path={"/"} element={&lt;Home&gt;&lt;/Home&gt;}&gt;&lt;/Route&gt;
@@ -169,7 +169,7 @@ const Garage = <span class="cstat-no" title="statement not covered" >lazy(<span 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-10T12:01:15.129Z
+                at 2023-07-11T17:22:02.331Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

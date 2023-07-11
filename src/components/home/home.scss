@@ -42,9 +42,21 @@
   @media (max-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 3vw;
+    height: 100vh;
   }
   @media (max-width: 600px) {
+    height: 100vh;
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.result_filter {
+  width: 100vw;
+  font-size: 2.5em;
+
+  h3 {
+    padding: 2rem;
+    color: white;
   }
 }
 

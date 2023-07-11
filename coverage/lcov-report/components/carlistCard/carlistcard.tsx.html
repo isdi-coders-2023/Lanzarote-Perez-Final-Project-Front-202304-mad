@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">86.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>13/15</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">86.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>13/15</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -127,27 +127,31 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,27 +195,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { Link } from 'react-router-dom';</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Link } from 'react-router-dom';
 import { Car } from '../../models/car';
-<span class="cstat-no" title="statement not covered" >import './carlistcard.scss';</span>
-<span class="cstat-no" title="statement not covered" >import { useCars } from '../../hooks/use.cars';</span>
-<span class="cstat-no" title="statement not covered" >import { GiCarKey } from 'react-icons/gi';</span>
-<span class="cstat-no" title="statement not covered" >import { TbEngine } from 'react-icons/tb';</span>
-<span class="cstat-no" title="statement not covered" >import { MdDateRange } from 'react-icons/md';</span>
-<span class="cstat-no" title="statement not covered" >import { BsFillFuelPumpFill } from 'react-icons/bs';</span>
+import './carlistcard.scss';
+import { useCars } from '../../hooks/use.cars';
+import { GiCarKey } from 'react-icons/gi';
+import { TbEngine } from 'react-icons/tb';
+import { MdDateRange } from 'react-icons/md';
+import { BsFillFuelPumpFill } from 'react-icons/bs';
+import { TbEdit } from 'react-icons/tb';
+import { MdDelete } from 'react-icons/md';
 &nbsp;
 type PropsType = {
   item: Car;
 };
-<span class="cstat-no" title="statement not covered" >export function <span class="fstat-no" title="function not covered" >C</span>arlistCard(</span>{ item }: PropsType) {
-  const { handleDeleteCar } = <span class="cstat-no" title="statement not covered" >useCars();</span>
+export function CarlistCard({ item }: PropsType) {
+  const { handleDeleteCar } = useCars();
 &nbsp;
-  const handleDelete = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
+  const handleDelete = <span class="fstat-no" title="function not covered" >() =</span>&gt; {
 <span class="cstat-no" title="statement not covered" >    handleDeleteCar(item.id);</span>
 <span class="cstat-no" title="statement not covered" >    window.location.reload();</span>
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;div className="car_card_garage"&gt;
       &lt;div
         className="car_card_image"
@@ -225,16 +231,16 @@ type PropsType = {
         &lt;div className="car_card_actions"&gt;
           &lt;button className="action"&gt;
             &lt;Link to={'/editcar/' + item.id} key={item.id}&gt;
-              ED
+              &lt;TbEdit /&gt;
             &lt;/Link&gt;
           &lt;/button&gt;
           &lt;button className="action" onClick={handleDelete}&gt;
-            DEL
+            &lt;MdDelete /&gt;
           &lt;/button&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div className="car_panel"&gt;
-        &lt;div className="car_card_info"&gt;
+        &lt;div className="car_card_info_garage"&gt;
           &lt;span&gt;
             {' '}
             &lt;GiCarKey /&gt; {item.carBrand + ' ' + item.carModel}
@@ -262,7 +268,7 @@ type PropsType = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-10T12:01:15.129Z
+                at 2023-07-11T17:22:02.331Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

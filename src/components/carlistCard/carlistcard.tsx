@@ -6,6 +6,8 @@ import { GiCarKey } from 'react-icons/gi';
 import { TbEngine } from 'react-icons/tb';
 import { MdDateRange } from 'react-icons/md';
 import { BsFillFuelPumpFill } from 'react-icons/bs';
+import { TbEdit } from 'react-icons/tb';
+import { MdDelete } from 'react-icons/md';
 
 type PropsType = {
   item: Car;
@@ -32,16 +34,16 @@ export function CarlistCard({ item }: PropsType) {
         <div className="car_card_actions">
           <button className="action">
             <Link to={'/editcar/' + item.id} key={item.id}>
-              ED
+              <TbEdit />
             </Link>
           </button>
           <button className="action" onClick={handleDelete}>
-            DEL
+            <MdDelete />
           </button>
         </div>
       </div>
       <div className="car_panel">
-        <div className="car_card_info">
+        <div className="car_card_info_garage">
           <span>
             {' '}
             <GiCarKey /> {item.carBrand + ' ' + item.carModel}

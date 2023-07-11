@@ -9,15 +9,18 @@ import {
   loadUsersAsync,
   loginUserAsync,
   registerUserAsync,
-} from '../redux/user.Slice';
+} from '../redux/user.slice';
 import { User } from '../models/user';
 import { UserRepository } from '../services/user.repository';
 import { url } from '../config';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 export function useUsers() {
   const token = useSelector((state: State) => state.token);
   const dispatch: AppDispatch = useDispatch();
   const repo: UserRepository = useMemo(() => new UserRepository(url), []);
+  const navigate = useNavigate();
 
   const handleLoadUsers = useCallback(async () => {
     dispatch(loadUsersAsync(repo));
@@ -32,7 +35,35 @@ export function useUsers() {
   };
 
   const handleLoginUser = async (data: Partial<User>) => {
-    dispatch(loginUserAsync({ repo, data }));
+    try {
+      dispatch(loginUserAsync({ repo, data }));
+      Swal.fire({
+        width: '20em',
+        icon: 'success',
+        title: 'LOGGED IN',
+        background:
+          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
+        color: 'white',
+        iconColor: 'white',
+        showConfirmButton: false,
+        padding: '4em 0',
+        timer: 2000,
+      });
+      navigate('/');
+    } catch (error) {
+      Swal.fire({
+        width: '20em',
+        icon: 'success',
+        title: 'LOGGED OUT',
+        background:
+          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
+        color: 'white',
+        iconColor: 'white',
+        showConfirmButton: false,
+        padding: '4em 0',
+        timer: 2000,
+      });
+    }
   };
 
   const handleLoginWithToken = async (
@@ -54,7 +85,6 @@ export function useUsers() {
   return {
     handleLoadUsers,
     handleLoginUser,
-    // handleRefreshCars,
     handleRegisterUser,
     handleFilterUsers,
     handleLoginWithToken,

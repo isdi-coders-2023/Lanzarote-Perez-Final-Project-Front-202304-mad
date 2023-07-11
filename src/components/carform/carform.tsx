@@ -13,7 +13,6 @@ export default function CarForm() {
 
     const data = new FormData(formRegisterElement);
     await handleNewCar(data);
-
     window.location.reload();
   };
 
@@ -25,11 +24,10 @@ export default function CarForm() {
       onSubmit={SubmitNewCar}
     >
       <h2 className="title_form">Add New Car</h2>
-      <input type="text" placeholder="Brand" name="carBrand"></input>
-      <input type="text" placeholder="Model" name="carModel"></input>
-      <input type="text" placeholder="Year" name="carYear"></input>
-      <input type="text" placeholder="Horsepower" name="carHP"></input>
-      <label htmlFor="carFuel">Fuel type:</label>
+      <input type="text" placeholder="Brand" name="carBrand" required></input>
+      <input type="text" placeholder="Model" name="carModel" required></input>
+      <input type="text" placeholder="Year" name="carYear" required></input>
+      <input type="text" placeholder="Horsepower" name="carHP" required></input>
       <div className="select_fuel">
         <select placeholder="Fuel" name="carFuel">
           <option value="gasoline">Gasoline</option>
@@ -39,7 +37,7 @@ export default function CarForm() {
           <option value="biofuel">Biofuel</option>
         </select>
       </div>
-      <input type="file" placeholder="Photo" name="carPhoto"></input>
+      <input type="file" placeholder="Photo" name="carPhoto" required></input>
       <button type="submit" className="login_button">
         SUBMIT
       </button>
