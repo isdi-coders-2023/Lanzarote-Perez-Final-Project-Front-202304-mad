@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import { User } from "../../models/user";
+import { useNavigate } from 'react-router-dom';
+import { User } from '../../models/user';
 type PropsType = {
   item: User;
 };
@@ -8,7 +8,7 @@ export function Card({ item }: PropsType) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/userDetails/" + item.id);
+    navigate('/userDetails/' + item.id);
   };
   return (
     <div className="user_card" key={item.id} onClick={handleClick}>
@@ -21,8 +21,9 @@ export function Card({ item }: PropsType) {
           <img
             className="image"
             src={item.avatar.imageUrl}
-            width={"150"}
-            height={"150"}
+            width={'150'}
+            height={'150'}
+            alt={item.userName}
           ></img>
         </figure>
       </div>

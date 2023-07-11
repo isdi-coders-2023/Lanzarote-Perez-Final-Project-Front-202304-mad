@@ -1,6 +1,6 @@
-import { User } from "../models/user";
-import { State } from "../redux/user.Slice";
-import { ApiRepository } from "./api.repository";
+import { User } from '../models/user';
+import { State } from '../redux/user.slice';
+import { ApiRepository } from './api.repository';
 
 type ApiResponse = {
   items: User[];
@@ -12,7 +12,7 @@ export class UserRepository extends ApiRepository<User> {
   }
 
   async query(): Promise<User[]> {
-    const response = await fetch(this.url + "user");
+    const response = await fetch(this.url + 'user');
     if (!response.ok) {
       const message = `Error: ${response.status}. ${response.statusText}`;
       throw new Error(message);
@@ -23,7 +23,7 @@ export class UserRepository extends ApiRepository<User> {
   }
 
   async filter(filter: string): Promise<User[]> {
-    const response = await fetch(this.url + "user" + filter);
+    const response = await fetch(this.url + 'user' + filter);
     if (!response.ok) {
       const message = `Error: ${response.status}. ${response.statusText}`;
       throw new Error(message);
@@ -34,20 +34,20 @@ export class UserRepository extends ApiRepository<User> {
   }
 
   async register(data: Partial<User>): Promise<User> {
-    const response = await fetch(this.url + "user/register", {
-      method: "POST",
+    const response = await fetch(this.url + 'user/register', {
+      method: 'POST',
       body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
+      headers: { 'Content-Type': 'application/json' },
     });
 
     return response.json() as Promise<User>;
   }
 
   async login(data: Partial<User>): Promise<State> {
-    const response = await fetch(this.url + "user/login", {
-      method: "PATCH",
+    const response = await fetch(this.url + 'user/login', {
+      method: 'PATCH',
       body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
+      headers: { 'Content-Type': 'application/json' },
     });
     const result = response.json();
     return result;

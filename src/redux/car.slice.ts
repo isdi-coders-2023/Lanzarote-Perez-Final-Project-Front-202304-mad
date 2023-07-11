@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { Car } from "../models/car";
-import { CarRepository } from "../services/car.repository";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { Car } from '../models/car';
+import { CarRepository } from '../services/car.repository';
 
 export type carPhoto = {
   urlOriginal: string;
@@ -17,12 +17,12 @@ export type State = {
 
 const initialState: State = {
   carList: [],
-  token: "",
+  token: '',
   carData: {} as Partial<Car>,
 };
 
 export const loadCarsAsync = createAsyncThunk(
-  "cars/load",
+  'cars/load',
   async (repo: CarRepository) => {
     const response = await repo.query();
     return response;
@@ -32,31 +32,32 @@ export const loadCarsAsync = createAsyncThunk(
 export const registerCarAsync = createAsyncThunk<
   Car,
   { repo: CarRepository; data: FormData }
->("cars/register", async ({ repo, data }) => {
-  return await repo.register(data);
+>('cars/register', async ({ repo, data }) => {
+  const result = await repo.register(data);
+  return result;
 });
 
 export const deleteCarAsync = createAsyncThunk<
   string,
   { repo: CarRepository; id: string }
->("cars/deleteByID", async ({ id, repo }, thunkAPI) => {
+>('cars/deleteByID', async ({ id, repo }, thunkAPI) => {
   try {
     await repo.deleteById(id);
     return id;
   } catch (error) {
-    return thunkAPI.rejectWithValue("ID not found");
+    return thunkAPI.rejectWithValue('ID not found');
   }
 });
 
 export const editCarAsync = createAsyncThunk<
   Car,
   { repo: CarRepository; data: Partial<Car> }
->("cars/edit", async ({ repo, data }) => {
+>('cars/edit', async ({ repo, data }) => {
   return await repo.patch(data);
 });
 
 const carsSlice = createSlice({
-  name: "cars",
+  name: 'cars',
   initialState,
   reducers: {},
   extraReducers: (builder) => {

@@ -1,5 +1,5 @@
-import { Avatar } from "../redux/user.Slice";
-import { Car } from "./car";
+import { Avatar } from '../redux/user.slice';
+import { Car } from './car';
 
 export type User = {
   id: string;

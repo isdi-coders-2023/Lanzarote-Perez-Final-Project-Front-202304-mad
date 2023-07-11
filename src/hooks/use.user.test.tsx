@@ -7,8 +7,8 @@ import { store } from '../redux/store';
 import { MemoryRouter } from 'react-router-dom';
 import { UserRepository } from '../services/user.repository';
 import userEvent from '@testing-library/user-event';
-import { ac } from '../redux/user.Slice';
-import { loginUserAsync, registerUserAsync } from '../redux/user.Slice';
+import { ac } from '../redux/user.slice';
+import { loginUserAsync, registerUserAsync } from '../redux/user.slice';
 
 const mockUser = {
   userName: 'mariko',

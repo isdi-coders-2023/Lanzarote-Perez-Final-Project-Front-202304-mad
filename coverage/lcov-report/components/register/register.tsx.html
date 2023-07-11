@@ -154,7 +154,23 @@
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -185,12 +201,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -245,11 +277,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { SyntheticEvent } from "react";
-<span class="cstat-no" title="statement not covered" >import "./register.scss";</span>
-<span class="cstat-no" title="statement not covered" >import { url } from "../../config";</span>
-<span class="cstat-no" title="statement not covered" >import Swal from "sweetalert2";</span>
-<span class="cstat-no" title="statement not covered" >import { useNavigate } from "react-router-dom";</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { SyntheticEvent } from 'react';
+<span class="cstat-no" title="statement not covered" >import './register.scss';</span>
+<span class="cstat-no" title="statement not covered" >import { url } from '../../config';</span>
+<span class="cstat-no" title="statement not covered" >import Swal from 'sweetalert2';</span>
+<span class="cstat-no" title="statement not covered" >import { useNavigate } from 'react-router-dom';</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >export default function <span class="fstat-no" title="function not covered" >R</span>egister(</span>) {
   const navigate = <span class="cstat-no" title="statement not covered" >useNavigate();</span>
@@ -261,9 +293,9 @@
 &nbsp;
     const data = <span class="cstat-no" title="statement not covered" >new FormData(formRegisterElement);</span>
 &nbsp;
-    const urlRegister = <span class="cstat-no" title="statement not covered" >url + "user/register";</span>
+    const urlRegister = <span class="cstat-no" title="statement not covered" >url + 'user/register';</span>
     const response = <span class="cstat-no" title="statement not covered" >await fetch(urlRegister, {</span>
-      method: "POST",
+      method: 'POST',
       headers: {},
       body: data,
     });
@@ -272,13 +304,29 @@
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (state.error) {</span>
 <span class="cstat-no" title="statement not covered" >      Swal.fire({</span>
-        icon: "error",
-        text: `${state.error}`,
+        width: '20em',
+        icon: 'error',
+        title: 'ERROR REGISTERING',
+        background:
+          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
+        color: 'white',
+        iconColor: 'white',
+        showConfirmButton: false,
+        padding: '4em 0',
+        timer: 2000,
       });
     } else {
 <span class="cstat-no" title="statement not covered" >      Swal.fire({</span>
-        icon: "success",
-        text: "Succesfully Registered!",
+        width: '20em',
+        icon: 'success',
+        title: 'SUCCESFULLY REGISTERED',
+        background:
+          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
+        color: 'white',
+        iconColor: 'white',
+        showConfirmButton: false,
+        padding: '4em 0',
+        timer: 2000,
       });
     }
 &nbsp;
@@ -286,7 +334,7 @@
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    state.userData = state.user;</span>
 <span class="cstat-no" title="statement not covered" >    delete state.user;</span>
-<span class="cstat-no" title="statement not covered" >    navigate("/login");</span>
+<span class="cstat-no" title="statement not covered" >    navigate('/login');</span>
   };
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
@@ -343,7 +391,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-10T12:01:15.129Z
+                at 2023-07-11T17:22:02.331Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -34,7 +34,9 @@ export default function Home() {
         {checkUserList() ? (
           userList.map((item: User) => <Card item={item} key={item.id}></Card>)
         ) : (
-          <h3>Lo sentimos, no hay usuarios de esta región.</h3>
+          <div className="result_filter">
+            <h3>Lo sentimos, no hay usuarios de esta región.</h3>
+          </div>
         )}
       </div>
     </div>

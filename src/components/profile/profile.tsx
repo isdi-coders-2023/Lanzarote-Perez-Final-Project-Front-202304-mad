@@ -26,7 +26,6 @@ export function Profile() {
           <span>
             <AiOutlinePhone className="icon" /> {userData.phoneNumber}
           </span>
-
           <span>
             <HiOutlineMail className="icon" /> {userData.email}
           </span>
