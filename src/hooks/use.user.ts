@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { AppDispatch } from '../redux/store';
+import { AppDispatch, store } from '../redux/store';
 import { useCallback, useMemo } from 'react';
 
 import {
@@ -13,14 +13,11 @@ import {
 import { User } from '../models/user';
 import { UserRepository } from '../services/user.repository';
 import { url } from '../config';
-import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
 
 export function useUsers() {
   const token = useSelector((state: State) => state.token);
   const dispatch: AppDispatch = useDispatch();
   const repo: UserRepository = useMemo(() => new UserRepository(url), []);
-  const navigate = useNavigate();
 
   const handleLoadUsers = useCallback(async () => {
     dispatch(loadUsersAsync(repo));
@@ -34,35 +31,15 @@ export function useUsers() {
     dispatch(registerUserAsync({ repo, data }));
   };
 
-  const handleLoginUser = async (data: Partial<User>) => {
-    try {
-      dispatch(loginUserAsync({ repo, data }));
-      Swal.fire({
-        width: '20em',
-        icon: 'success',
-        title: 'LOGGED IN',
-        background:
-          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
-        color: 'white',
-        iconColor: 'white',
-        showConfirmButton: false,
-        padding: '4em 0',
-        timer: 2000,
-      });
-      navigate('/');
-    } catch (error) {
-      Swal.fire({
-        width: '20em',
-        icon: 'success',
-        title: 'LOGGED OUT',
-        background:
-          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
-        color: 'white',
-        iconColor: 'white',
-        showConfirmButton: false,
-        padding: '4em 0',
-        timer: 2000,
-      });
+  const handleLoginUser = async (data: Partial<User>): Promise<Boolean> => {
+    await dispatch(loginUserAsync({ repo, data }));
+    const userLogged = store.getState().users.token;
+    localStorage.setItem('store', userLogged as string);
+    console.log(userLogged, 'User hook');
+    if (userLogged !== '' && userLogged !== undefined) {
+      return true;
+    } else {
+      return false;
     }
   };
 
