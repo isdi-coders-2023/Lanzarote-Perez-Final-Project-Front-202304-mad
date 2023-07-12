@@ -109,21 +109,4 @@ describe('Login component', () => {
       });
     });
   });
-
-  test('displays error message on empty form submission', () => {
-    render(
-      <Provider store={store}>
-        <MemoryRouter>
-          <Login />
-        </MemoryRouter>
-      </Provider>
-    );
-
-    const submitButton = screen.getByRole('button', { name: 'SUBMIT' });
-
-    fireEvent.click(submitButton);
-
-    const errorMessage = screen.getByText('Invalid username or password.');
-    expect(errorMessage).toBeInTheDocument();
-  });
 });

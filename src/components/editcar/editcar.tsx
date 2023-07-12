@@ -13,9 +13,8 @@ export function EditCarForm() {
   const { userData, userList } = useSelector((state: RootState) => state.users);
   const { handleEditCar } = useCars();
 
-  const user = userList.find((item: User) => item.id === userData.id);
+  const user = userList.find((item: User) => item.id === userData.id) as User;
   const car: Car = user?.cars.find((item: Car) => item.id === id) as Car;
-  console.log(car, 'yyyyyyyyyyyyyyy');
 
   const handleEditForm = async (event: SyntheticEvent) => {
     event.preventDefault();

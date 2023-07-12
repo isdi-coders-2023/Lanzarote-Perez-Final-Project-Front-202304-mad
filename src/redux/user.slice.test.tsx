@@ -77,6 +77,8 @@ describe('Given the users slice reducer', () => {
     });
     test('Then it should dispatch the loginUserAsync', () => {
       const mockToken = '';
+      userRepo.login = jest.fn().mockResolvedValue({ token: '', userData: {} });
+
       const localStorage = jest.fn();
       const setItem = jest.fn().mockReturnValue(mockToken);
       store.dispatch(loginUserAsync({ repo: userRepo, data }));

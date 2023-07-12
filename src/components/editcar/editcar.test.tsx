@@ -25,6 +25,7 @@ jest.mock('react-redux', () => ({
     selector({
       users: {
         userData: {
+          id: '10',
           cars: [
             {
               id: '1',
@@ -43,6 +44,28 @@ jest.mock('react-redux', () => ({
             },
           ] as Car[],
         },
+        userList: [
+          {
+            id: '10',
+            cars: [
+              {
+                id: '1',
+                carBrand: 'Toyota',
+                carModel: 'Camry',
+                carYear: '2022',
+                carFuel: 'gasoline',
+                carHP: '200',
+              },
+            ],
+            carPhoto: {
+              imageUrl: 'http://localhost/',
+              url: 'https://example.com/image.jpg',
+              urlOriginal: '',
+              mimetype: '',
+              size: 0,
+            },
+          },
+        ],
       },
     })
   ),

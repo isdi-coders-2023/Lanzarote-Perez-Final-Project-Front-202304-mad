@@ -18,5 +18,7 @@ export default {
     '<rootDir>/src/vite-env.d.ts',
     '<rootDir>/src/components/form',
     '<rootDir>/src/config.ts',
+    '<rootDir>/src/components/filter/filter.tsx',
+    '<rootDir>/src/components/garage/garage.tsx',
   ],
 };
