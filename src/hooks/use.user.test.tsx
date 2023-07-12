@@ -14,6 +14,9 @@ const mockUser = {
   userName: 'mariko',
   email: 'mariko@elquelolea.com',
 } as unknown as User;
+
+const mockFormData = new FormData();
+
 const mockRepo = {
   register: jest.fn(),
   login: jest.fn().mockReturnValue({ token: '', userData: {} }),
@@ -24,7 +27,7 @@ function TestComponent() {
 
   return (
     <>
-      <button onClick={() => handleRegisterUser(mockUser)}></button>
+      <button onClick={() => handleRegisterUser(mockFormData)}></button>
       <button onClick={() => handleLoginUser(mockUser)}></button>
       <button onClick={() => handleGetToken(mockToken)}></button>
     </>
@@ -47,6 +50,7 @@ describe('Given the useUsers custom hook', () => {
   });
   describe('When is rendered', () => {
     test('Then the handleRegisterUser function should be called', async () => {
+      const mockUser = new FormData();
       await act(async () => {
         await userEvent.click(elements[0]);
         store.dispatch(registerUserAsync({ repo: mockRepo, data: mockUser }));

@@ -44,7 +44,7 @@ describe('Login component', () => {
       </Provider>
     );
 
-    const usernameInput = screen.getByPlaceholderText('Username / Email');
+    const usernameInput = screen.getByPlaceholderText('Username');
     expect(usernameInput).toBeInTheDocument();
 
     const passwordInput = screen.getByPlaceholderText('Password');
@@ -66,7 +66,7 @@ describe('Login component', () => {
       </Provider>
     );
 
-    const usernameInput = screen.getByPlaceholderText('Username / Email');
+    const usernameInput = screen.getByPlaceholderText('Username');
     const passwordInput = screen.getByPlaceholderText('Password');
     const submitButton = screen.getByRole('button', { name: 'SUBMIT' });
 
@@ -94,7 +94,7 @@ describe('Login component', () => {
       </Provider>
     );
 
-    const usernameInput = screen.getByPlaceholderText('Username / Email');
+    const usernameInput = screen.getByPlaceholderText('Username');
     const passwordInput = screen.getByPlaceholderText('Password');
     const submitButton = screen.getByRole('button', { name: 'SUBMIT' });
 

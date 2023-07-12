@@ -1,11 +1,11 @@
 import { SyntheticEvent } from 'react';
 import './register.scss';
-import { url } from '../../config';
-import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { useUsers } from '../../hooks/use.user';
 
 export default function Register() {
   const navigate = useNavigate();
+  const { handleRegisterUser } = useUsers();
 
   const handleRegister = async (event: SyntheticEvent) => {
     event.preventDefault();
@@ -13,48 +13,7 @@ export default function Register() {
       event.target as HTMLFormElement;
 
     const data = new FormData(formRegisterElement);
-
-    const urlRegister = url + 'user/register';
-    const response = await fetch(urlRegister, {
-      method: 'POST',
-      headers: {},
-      body: data,
-    });
-    console.log(response.body);
-    const state = await response.json();
-
-    if (state.error) {
-      Swal.fire({
-        width: '20em',
-        icon: 'error',
-        title: 'ERROR REGISTERING',
-        background:
-          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
-        color: 'white',
-        iconColor: 'white',
-        showConfirmButton: false,
-        padding: '4em 0',
-        timer: 2000,
-      });
-    } else {
-      Swal.fire({
-        width: '20em',
-        icon: 'success',
-        title: 'SUCCESFULLY REGISTERED',
-        background:
-          'linear-gradient(to right, rgba(20, 20, 20), rgba(0, 0, 0))',
-        color: 'white',
-        iconColor: 'white',
-        showConfirmButton: false,
-        padding: '4em 0',
-        timer: 2000,
-      });
-    }
-
-    console.log(state);
-
-    state.userData = state.user;
-    delete state.user;
+    await handleRegisterUser(data);
     navigate('/login');
   };
 

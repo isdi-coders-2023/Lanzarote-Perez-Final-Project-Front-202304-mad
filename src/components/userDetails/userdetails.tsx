@@ -57,31 +57,29 @@ export default function UserDetails() {
         </div>
       ) : (
         user.cars?.map((item: Car) => (
-          <>
-            <div className="car_card" key={item.carModel}>
-              <figure className="car_card_image_container">
-                <img
-                  className="car_image"
-                  src={item.carPhoto.imageUrl}
-                  alt={item.carModel}
-                ></img>
-              </figure>
-              <div className="car_card_info">
-                <span>
-                  <GiCarKey /> {item.carBrand + ' ' + item.carModel}
-                </span>
-                <span>
-                  <MdDateRange /> {item.carYear}
-                </span>
-                <span>
-                  <TbEngine /> {item.carHP} CV
-                </span>
-                <span>
-                  <BsFillFuelPumpFill /> {item.carFuel}
-                </span>
-              </div>
-            </div>{' '}
-          </>
+          <div className="car_card" key={item.id}>
+            <figure className="car_card_image_container">
+              <img
+                className="car_image"
+                src={item.carPhoto.imageUrl}
+                alt={item.carModel}
+              ></img>
+            </figure>
+            <div className="car_card_info">
+              <span>
+                <GiCarKey /> {item.carBrand + ' ' + item.carModel}
+              </span>
+              <span>
+                <MdDateRange /> {item.carYear}
+              </span>
+              <span>
+                <TbEngine /> {item.carHP} CV
+              </span>
+              <span>
+                <BsFillFuelPumpFill /> {item.carFuel}
+              </span>
+            </div>
+          </div>
         ))
       )}
     </div>

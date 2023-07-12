@@ -37,7 +37,7 @@ describe('Given the users slice reducer', () => {
     });
   });
   describe('Given the users slice reducer', () => {
-    const data = {} as Partial<User>;
+    const data = new FormData();
 
     const userRepo: UserRepository = {
       url: 'http://localhost:4206',
@@ -65,7 +65,7 @@ describe('Given the users slice reducer', () => {
       expect(userRepo.filter).toHaveBeenCalled();
     });
     test('Then it should dispatch the registerUserAsync', async () => {
-      const userData = {};
+      const userData = new FormData();
 
       userRepo.register = jest
         .fn()
@@ -77,6 +77,7 @@ describe('Given the users slice reducer', () => {
     });
     test('Then it should dispatch the loginUserAsync', () => {
       const mockToken = '';
+      const data = {} as Partial<User>;
       userRepo.login = jest.fn().mockResolvedValue({ token: '', userData: {} });
 
       const localStorage = jest.fn();

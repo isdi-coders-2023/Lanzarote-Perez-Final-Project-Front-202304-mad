@@ -23,7 +23,7 @@ export default function CarForm() {
       role="form"
       onSubmit={SubmitNewCar}
     >
-      <h2 className="title_form">Add New Car</h2>
+      <h2 className="title_form">ADD NEW CAR</h2>
       <input type="text" placeholder="Brand" name="carBrand" required></input>
       <input type="text" placeholder="Model" name="carModel" required></input>
       <input type="text" placeholder="Year" name="carYear" required></input>

@@ -50,7 +50,7 @@ export function EditCarForm() {
         onSubmit={handleEditForm}
         aria-label="car-form"
       >
-        <h2 className="title_form">Edit your car</h2>
+        <h2 className="title_form">EDIT {car.carBrand + car.carModel}</h2>
         <input type="text" defaultValue={car.carBrand} name="carBrand"></input>
         <input type="text" defaultValue={car.carModel} name="carModel"></input>
         <input type="text" defaultValue={car.carYear} name="carYear"></input>

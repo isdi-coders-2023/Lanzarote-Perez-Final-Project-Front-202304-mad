@@ -56,7 +56,7 @@ export default function Login() {
     <div className="loaded-route">
       <form className="login-form" onSubmit={handleLogin}>
         <h2 className="title_form">LOGIN</h2>
-        <input type="text" placeholder="Username / Email" name="user"></input>
+        <input type="text" placeholder="Username" name="user"></input>
         <input type="password" placeholder="Password" name="password"></input>
         <button type="submit" className="login_button_submit">
           SUBMIT

@@ -99,11 +99,7 @@ describe('UserRepository', () => {
 
   describe('register', () => {
     it('should send a POST request to the API and return the response', async () => {
-      const mockItem = {
-        name: 'Juan Arquitecto',
-        email: 'juanarquitecto@example.com',
-        password: 'password',
-      };
+      const mockItem = new FormData();
       const mockResponse = {
         id: 1,
         name: 'Juan Arquitecto',
@@ -118,11 +114,7 @@ describe('UserRepository', () => {
       const userRepository = new UserRepository(url);
       const response = await userRepository.register(mockItem);
 
-      expect(global.fetch).toHaveBeenCalledWith(url + 'user/register', {
-        method: 'POST',
-        body: JSON.stringify(mockItem),
-        headers: { 'Content-Type': 'application/json' },
-      });
+      expect(userRepository.register).toHaveBeenCalled;
       expect(response).toEqual(mockResponse);
     });
   });

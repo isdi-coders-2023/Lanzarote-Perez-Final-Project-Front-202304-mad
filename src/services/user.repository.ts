@@ -1,6 +1,6 @@
-import { User } from '../models/user';
-import { State } from '../redux/user.slice';
-import { ApiRepository } from './api.repository';
+import { User } from '../models/user.js';
+import { State } from '../redux/user.slice.js';
+import { ApiRepository } from './api.repository.js';
 
 type ApiResponse = {
   items: User[];
@@ -33,11 +33,10 @@ export class UserRepository extends ApiRepository<User> {
     return (await data).items;
   }
 
-  async register(data: Partial<User>): Promise<User> {
+  async register(data: FormData): Promise<User> {
     const response = await fetch(this.url + 'user/register', {
       method: 'POST',
-      body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' },
+      body: data,
     });
 
     return response.json() as Promise<User>;

@@ -46,7 +46,7 @@ export const loadFilteredUsersAsync = createAsyncThunk<
 
 export const registerUserAsync = createAsyncThunk<
   User,
-  { repo: UserRepository; data: Partial<User> }
+  { repo: UserRepository; data: FormData }
 >('users/register', async ({ repo, data }) => {
   return await repo.register(data);
 });

@@ -16,17 +16,12 @@
 }
 
 input {
-  background-color: rgb(126, 116, 116);
+  background: 0 0;
   width: 12rem;
   height: 2rem;
   border-radius: 1px 1rem 1px 1rem;
   margin: 1rem;
   border: 2px solid rgb(255, 255, 255);
-}
-
-input:hover {
-  background-color: darkred;
-  color: white;
 }
 
 input::placeholder {
