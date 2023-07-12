@@ -5,15 +5,16 @@ import './editcar.scss';
 import { useNavigate, useParams } from 'react-router-dom';
 import { RootState } from '../../redux/store';
 import { useSelector } from 'react-redux';
+import { User } from '../../models/user';
 
 export function EditCarForm() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { userData } = useSelector((state: RootState) => state.users);
+  const { userData, userList } = useSelector((state: RootState) => state.users);
   const { handleEditCar } = useCars();
 
-  const car: Car = userData.cars?.find((item: Car) => item.id === id) as Car;
-  console.log(userData.cars);
+  const user = userList.find((item: User) => item.id === userData.id);
+  const car: Car = user?.cars.find((item: Car) => item.id === id) as Car;
   console.log(car, 'yyyyyyyyyyyyyyy');
 
   const handleEditForm = async (event: SyntheticEvent) => {
