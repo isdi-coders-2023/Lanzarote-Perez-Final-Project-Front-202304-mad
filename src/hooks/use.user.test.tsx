@@ -16,7 +16,7 @@ const mockUser = {
 } as unknown as User;
 const mockRepo = {
   register: jest.fn(),
-  login: jest.fn(),
+  login: jest.fn().mockReturnValue({ token: '', userData: {} }),
 } as unknown as UserRepository;
 const mockToken = 'maritoken';
 function TestComponent() {
